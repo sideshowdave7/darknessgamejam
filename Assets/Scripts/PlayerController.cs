@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 		if (togglePower && !prevTogglePower) {
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
+				DarknessAudioManager.Instance.muteLayers(.5f);
 				break;
 			case PlayerPowerEnum.Time:
 				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
 			currentPower = (PlayerPowerEnum)(((int)currentPower + 1) % (int)PlayerPowerEnum.End);
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
+				DarknessAudioManager.Instance.muteLayers(0f);
 				break;
 			case PlayerPowerEnum.Time:
 				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));
