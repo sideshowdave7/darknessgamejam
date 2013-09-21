@@ -87,10 +87,10 @@ MonoBehaviour:
   _registerInput: 1
   _depth: 0
   _collidable: 0
-  _physics: 0
+  _physics: 4
   _colliderType: 0
-  _collisionDepth: 0
-  _collisionSize: .400000006
+  _collisionDepth: 1
+  _collisionSize: 1
   draggable: 0
   dragButton: 0
   init: 0
