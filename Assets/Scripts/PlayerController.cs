@@ -16,21 +16,46 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		var input = new Vector3(Input.GetAxis ("Horizontal"),0f, Input.GetAxis ("Vertical"));
-		var togglePower = Input.GetButtonDown("TogglePower");
+		var input = new Vector3 (Input.GetAxis ("Horizontal"), 0f, Input.GetAxis ("Vertical"));
+		var togglePower = Input.GetButtonDown ("TogglePower");
 		
-		if (togglePower && !prevTogglePower){
+		if (togglePower && !prevTogglePower) {
+			switch (currentPower) {
+			case PlayerPowerEnum.Audio:
+				break;
+			case PlayerPowerEnum.Time:
+				break;
+			case PlayerPowerEnum.Visual:
+				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
+				foreach(VisibleToggleSpritesThingy vis in visuals){
+					vis.SetVisibleMode(false);
+				}
+				break;
+			}
 			currentPower = (PlayerPowerEnum)(((int)currentPower + 1) % (int)PlayerPowerEnum.End);
+			switch (currentPower) {
+			case PlayerPowerEnum.Audio:
+				break;
+			case PlayerPowerEnum.Time:
+				break;
+			case PlayerPowerEnum.Visual:
+				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
+				foreach(VisibleToggleSpritesThingy vis in visuals){
+					vis.SetVisibleMode(true);
+				}
+				break;
+			}
 		}
 		
-		this.rigidbody.velocity = (Vector3.Normalize(input) * move_speed);
+		this.rigidbody.velocity = (Vector3.Normalize (input) * move_speed);
 		
 		prevTogglePower = togglePower;
 	}
 	
 	
 	
-	public enum PlayerPowerEnum {
+	public enum PlayerPowerEnum
+	{
 		
 		Normal,
 		Visual,
