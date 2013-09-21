@@ -43,8 +43,17 @@ public class LevelLoader : MonoBehaviour
 	private void LoadLayer (OgmoLayer layer)
 	{
 		if (layer.tiles != null) {
+			float height = 0f;
+			switch (layer.name) {
+			case "Foreground":
+				height = 5f;
+				break;
+			case "Background":
+				height = 0f;
+				break;
+			}
 			foreach (var tile in layer.tiles) {
-				LoadTile (tile);
+				LoadTile (tile, height);
 			}
 		}
 		if (layer.entities != null) {
@@ -54,9 +63,9 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
-	private void LoadTile (OgmoTile tile)
+	private void LoadTile (OgmoTile tile, float height)
 	{
-		string tileName = string.Format ("{0}_{1}", tile.tx, tile.ty);
+		string tileName = string.Format ("frame{0}", tile.id);
 		string tilePath = (zoneFolder ?? "") + tileName;
 		var go = GetPrefab (tilePath);
 		if (go != null) {
@@ -64,9 +73,9 @@ public class LevelLoader : MonoBehaviour
 			go.transform.parent = lvl.transform;
 			OTObject ot = go.GetComponent<OTObject> ();
 			if (ot != null)
-				ot.position = new Vector2 (tile.x, tile.y);
+				ot.position = new Vector2 (tile.x, 15 - tile.y);
 			else
-				go.transform.position = new Vector3 (tile.x, 0f, tile.y);
+				go.transform.position = new Vector3 (tile.x, height, -tile.y);
 		}
 	}
 	
@@ -77,10 +86,9 @@ public class LevelLoader : MonoBehaviour
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
 			OTObject ot = go.GetComponent<OTObject> ();
+			go.transform.position = new Vector3 (entity.x * 0.0625f, 0.25f, -entity.y * 0.0625f);
 			if (ot != null)
 				ot.position = new Vector2 (entity.x * 0.0625f, entity.y * 0.0625f);
-			else
-				go.transform.position = new Vector3 (entity.x * 0.0625f, 0f, entity.y * 0.0625f);
 		}
 	}
 	

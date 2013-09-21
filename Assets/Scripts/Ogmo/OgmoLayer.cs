@@ -58,8 +58,7 @@ public class OgmoLayer
 		tiles = new List<OgmoTile> (layerNode.ChildNodes.Count);
 		foreach (XmlElement element in layerNode) {
 			tiles.Add (new OgmoTile{
-				tx = char.Parse (element.GetAttribute ("tx")),
-				ty = char.Parse (element.GetAttribute ("ty")),
+				id = int.Parse(element.GetAttribute("id")),
 				x = int.Parse (element.GetAttribute ("x")),
 				y = int.Parse (element.GetAttribute ("y"))
 			});
@@ -71,8 +70,7 @@ public class OgmoLayer
 		tiles = new List<OgmoTile> (layerNode.ChildNodes.Count);
 		foreach (XmlElement element in layerNode) {
 			tiles.Add (new OgmoTile{
-				tx = char.Parse (element.GetAttribute ("tx")),
-				ty = char.Parse (element.GetAttribute ("ty")),
+				id = int.Parse(element.GetAttribute("id")),
 				x = int.Parse (element.GetAttribute ("x")),
 				y = int.Parse (element.GetAttribute ("y"))
 			});
