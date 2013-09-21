@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class LevelLoader : MonoBehaviour
 {	
+	private int levelIndex = -1;
 	public TextAsset[] levels;
 	public string zoneFolder;
 	public GameObject lvl;
@@ -10,7 +12,7 @@ public class LevelLoader : MonoBehaviour
 	void Awake ()
 	{
 		if (levels != null && levels.Length > 0) {
-			LoadLevel (new OgmoLevel (levels [0]));
+			LoadNextLevel();
 		}
 	}
 	
@@ -20,10 +22,21 @@ public class LevelLoader : MonoBehaviour
 			lvl = GameObject.Find ("TheLevelStuff");
 		if (lvl != null)
 			GameObject.Destroy (lvl);
+		levelIndex = levels.IndexOf (level);
 		lvl = new GameObject ("TheLevelStuff");
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
 		}
+	}
+	
+	public void LoadNextLevel ()
+	{
+		LoadLevel (levels (++levelIndex));
+	}
+	
+	public void ReloadLevel ()
+	{
+		LoadLevel (levels (levelIndex));
 	}
 	
 	private void LoadLayer (OgmoLayer layer)

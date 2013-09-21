@@ -10,9 +10,11 @@ public class KillPlayer : MonoBehaviour {
 		collider = GetComponent<Collider>();
 	}
 	
-	void OnTriggerEnter(Collider other) {
-		
-        if(other.gameObject.tag == "Player")
-			Application.LoadLevel(Application.loadedLevel);
+	void OnTriggerEnter(Collider other) {		
+        if(other.gameObject.tag == "Player"){
+			var ll = GameObject.FindObjectOfType(typeof(LevelLoader)) as LevelLoader;
+			if(ll!=null)
+				ll.ReloadLevel();
+		}
     }
 }
