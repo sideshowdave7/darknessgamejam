@@ -1,0 +1,26 @@
+syntax: glob
+
+*.exe
+*.sln
+*.userprefs
+*.csproj
+*.pidb
+*.unityproj
+.DS_Store
+./Library/*
+./Temp/*
+./mbn_Data/*
+*.vsp
+.svn
+pristine
+tmp
+entries
+format
+wc.db
+ajones.unity
+ajones.unity.meta
+*.orig
+*.orig.meta
+version.txt
+Assets/Metrics.txt.meta
+Assets/Metrics.txt
