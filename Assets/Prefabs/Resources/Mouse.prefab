@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 12.27458, y: .00198839512, z: 3.21585321}
+  m_LocalPosition: {x: 10.6518784, y: -.0184468832, z: -17.3816948}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Mouse
-  _position: {x: 12.27458, y: 3.21585321}
+  _position: {x: 10.6518784, y: -17.3816948}
   _size: {x: 2, y: 2}
   _rotation: 0
   _pivot: 4
@@ -137,7 +138,7 @@ MonoBehaviour:
   _containerName: mouse container
   _newSprite: 0
   _animation: {fileID: 0}
-  _animationFrameset: 
+  _animationFrameset: down
   _speed: 1
   _looping: 1
   _numberOfPlays: -1
@@ -146,6 +147,19 @@ MonoBehaviour:
   _destroyWhenFinished: 0
   animationPreview: 0
   _animationName: mouse animation
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee346e6342ff3349978be681852c4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  attackRange: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

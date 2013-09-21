@@ -156,7 +156,7 @@ GameObject:
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400018}
   m_Layer: 0
-  m_Name: mouse container
+  m_Name: Gorilla container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,6 +190,39 @@ GameObject:
   - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: Cockroach animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100022
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400022}
+  - 114: {fileID: 11400026}
+  m_Layer: 0
+  m_Name: Gorilla animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100024
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400024}
+  - 114: {fileID: 11400028}
+  - 114: {fileID: 11400030}
+  m_Layer: 0
+  m_Name: mouse container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,6 +273,7 @@ Transform:
   - {fileID: 400018}
   - {fileID: 400010}
   - {fileID: 400016}
+  - {fileID: 400024}
   m_Father: {fileID: 400000}
 --- !u!1002 &400005
 EditorExtensionImpl:
@@ -255,6 +289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400020}
+  - {fileID: 400022}
   - {fileID: 400014}
   m_Father: {fileID: 400000}
 --- !u!1002 &400007
@@ -341,6 +376,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
+--- !u!4 &400022
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287.32251, y: -15.8438473, z: -35.0691948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400006}
+--- !u!4 &400024
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -690,11 +747,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: mouse animation
-  _fps: 10
-  _duration: .200000003
+  _fps: 8.88888931
+  _duration: .899999976
   framesets:
-  - name: 
-    container: {fileID: 11400016}
+  - name: down
+    container: {fileID: 11400028}
     startFrame: 0
     endFrame: 1
     frameNames: []
@@ -704,6 +761,42 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 0
+    _containerName: mouse container
+  - name: up
+    container: {fileID: 11400028}
+    startFrame: 2
+    endFrame: 3
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 2
+    _containerName: mouse container
+  - name: left
+    container: {fileID: 11400028}
+    startFrame: 4
+    endFrame: 5
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 4
+    _containerName: mouse container
+  - name: right
+    container: {fileID: 11400028}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 6
     _containerName: mouse container
 --- !u!114 &11400016
 MonoBehaviour:
@@ -716,13 +809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: mouse container
+  _name: Gorilla container
   _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
+  texture: {fileID: 2800000, guid: d236f0f9febfc21428b3332895d71097, type: 3}
   sizeTextures: []
   generateSprites: 0
-  _framesXY: {x: 8, y: 2}
-  _frameSize: {x: 16, y: 16}
+  _framesXY: {x: 3, y: 4}
+  _frameSize: {x: 32, y: 32}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,6 +883,98 @@ MonoBehaviour:
     singleDuration: 0
     startIndex: 0
     _containerName: cockroach container
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Gorilla animation
+  _fps: 3
+  _duration: 4
+  framesets:
+  - name: down
+    container: {fileID: 11400016}
+    startFrame: 0
+    endFrame: 2
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 0
+    _containerName: Gorilla container
+  - name: left
+    container: {fileID: 11400016}
+    startFrame: 3
+    endFrame: 5
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 3
+    _containerName: Gorilla container
+  - name: right
+    container: {fileID: 11400016}
+    startFrame: 6
+    endFrame: 8
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 6
+    _containerName: Gorilla container
+  - name: up
+    container: {fileID: 11400016}
+    startFrame: 9
+    endFrame: 11
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 9
+    _containerName: Gorilla container
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: mouse container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 8, y: 2}
+  _frameSize: {x: 16, y: 16}
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
