@@ -19,7 +19,7 @@ public class OgmoImporter : AssetPostprocessor
 				string fileData = reader.ReadToEnd ();
 				reader.Close ();
  
-				FileStream resourceFile = new FileStream (newFileName, FileMode.OpenOrCreate, FileAccess.Write);
+				FileStream resourceFile = new FileStream (newFileName, FileMode.Create, FileAccess.Write);
 				StreamWriter writer = new StreamWriter (resourceFile);
 				writer.Write (fileData);
 				writer.Close (); 

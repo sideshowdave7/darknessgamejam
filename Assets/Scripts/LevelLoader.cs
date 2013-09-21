@@ -23,7 +23,7 @@ public class LevelLoader : MonoBehaviour
 		if (lvl != null)
 			GameObject.Destroy (lvl);		
 		levelIndex = index;
-		var level = new OgmoLevel(levels[index]);
+		var level = new OgmoLevel (levels [index]);
 		lvl = new GameObject ("TheLevelStuff");
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
@@ -66,7 +66,7 @@ public class LevelLoader : MonoBehaviour
 			if (ot != null)
 				ot.position = new Vector2 (tile.x, tile.y);
 			else
-				go.transform.position = new Vector3 (tile.x, tile.y, 0f);
+				go.transform.position = new Vector3 (tile.x, 0f, tile.y);
 		}
 	}
 	
@@ -80,7 +80,7 @@ public class LevelLoader : MonoBehaviour
 			if (ot != null)
 				ot.position = new Vector2 (entity.x * 0.0625f, entity.y * 0.0625f);
 			else
-				go.transform.position = new Vector3 (entity.x * 0.0625f, entity.y * 0.0625f, 0f);
+				go.transform.position = new Vector3 (entity.x * 0.0625f, 0f, entity.y * 0.0625f);
 		}
 	}
 	
