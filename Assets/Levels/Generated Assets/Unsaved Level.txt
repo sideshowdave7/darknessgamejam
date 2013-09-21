@@ -44,16 +44,6 @@
     <tile x="14" y="2" tx="0" ty="0" />
     <tile x="14" y="3" tx="0" ty="0" />
     <tile x="14" y="4" tx="0" ty="0" />
-    <tile x="15" y="10" tx="1" ty="1" />
-    <tile x="16" y="2" tx="3" ty="1" />
-    <tile x="16" y="3" tx="3" ty="1" />
-    <tile x="16" y="4" tx="3" ty="1" />
-    <tile x="16" y="7" tx="1" ty="1" />
-    <tile x="16" y="10" tx="1" ty="1" />
-    <tile x="17" y="7" tx="1" ty="1" />
-    <tile x="17" y="8" tx="1" ty="1" />
-    <tile x="17" y="9" tx="1" ty="1" />
-    <tile x="17" y="10" tx="1" ty="1" />
   </NewLayer0>
   <NewLayer1>
     <Mouse id="0" x="256" y="160" />
