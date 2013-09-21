@@ -1,17 +1,9 @@
 <level width="320" height="240">
+  <NewLayer1>
+    <Mouse id="0" x="256" y="160" />
+    <Cockroach id="1" x="32" y="48" />
+  </NewLayer1>
   <NewLayer0 tileset="MainTileset" exportMode="XMLCoords">
-    <tile x="1" y="6" tx="2" ty="0" />
-    <tile x="1" y="7" tx="2" ty="0" />
-    <tile x="1" y="8" tx="2" ty="0" />
-    <tile x="1" y="9" tx="2" ty="0" />
-    <tile x="1" y="10" tx="2" ty="0" />
-    <tile x="1" y="11" tx="2" ty="0" />
-    <tile x="2" y="6" tx="2" ty="0" />
-    <tile x="2" y="11" tx="2" ty="0" />
-    <tile x="3" y="6" tx="2" ty="0" />
-    <tile x="3" y="11" tx="2" ty="0" />
-    <tile x="4" y="0" tx="0" ty="0" />
-    <tile x="4" y="1" tx="0" ty="0" />
     <tile x="4" y="2" tx="0" ty="0" />
     <tile x="4" y="3" tx="0" ty="0" />
     <tile x="4" y="6" tx="2" ty="0" />

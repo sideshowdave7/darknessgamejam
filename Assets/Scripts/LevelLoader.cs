@@ -16,13 +16,14 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
-	public void LoadLevel (OgmoLevel level)
+	private void LoadLevel (int index)
 	{
 		if (lvl == null)
 			lvl = GameObject.Find ("TheLevelStuff");
 		if (lvl != null)
 			GameObject.Destroy (lvl);		
-		levelIndex = System.Array.IndexOf (levels, level);
+		levelIndex = index;
+		var level = new OgmoLevel(levels[index]);
 		lvl = new GameObject ("TheLevelStuff");
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
@@ -31,12 +32,12 @@ public class LevelLoader : MonoBehaviour
 	
 	public void LoadNextLevel ()
 	{
-		LoadLevel (new OgmoLevel (levels [++levelIndex]));
+		LoadLevel (++levelIndex);
 	}
 	
 	public void ReloadLevel ()
 	{
-		LoadLevel (new OgmoLevel (levels [levelIndex]));
+		LoadLevel (levelIndex);
 	}
 	
 	private void LoadLayer (OgmoLayer layer)
