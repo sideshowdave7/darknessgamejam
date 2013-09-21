@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider))]
 public class KillPlayer : MonoBehaviour {
+	private Collider collider;
+	
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		collider = GetComponent<Collider>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Player")
+			Application.LoadLevel(Application.loadedLevel);
+    }
 }
