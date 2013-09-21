@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
 			case PlayerPowerEnum.Audio:
 				break;
 			case PlayerPowerEnum.Time:
+				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));
+				foreach(TimeToggleThingy t in times){
+					t.setTimeSlow(false);
+				}
 				break;
 			case PlayerPowerEnum.Visual:
 				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
@@ -37,6 +41,10 @@ public class PlayerController : MonoBehaviour
 			case PlayerPowerEnum.Audio:
 				break;
 			case PlayerPowerEnum.Time:
+				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));
+				foreach(TimeToggleThingy t in times){
+					t.setTimeSlow(true);
+				}
 				break;
 			case PlayerPowerEnum.Visual:
 				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
