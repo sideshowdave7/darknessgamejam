@@ -3,16 +3,24 @@ using System.Collections.Generic;
 
 public class LevelLoader : MonoBehaviour
 {	
+	public TextAsset[] levels;
 	public string zoneFolder;
 	public GameObject lvl;
 	
+	void Awake ()
+	{
+		if (levels != null && levels.Length > 0) {
+			LoadLevel (new OgmoLevel (levels [0]));
+		}
+	}
+	
 	public void LoadLevel (OgmoLevel level)
 	{
-		if(lvl == null)
-			lvl = GameObject.Find("TheLevelStuff");
-		if(lvl != null)
-			GameObject.Destroy(lvl);
-		lvl = new GameObject("TheLevelStuff");
+		if (lvl == null)
+			lvl = GameObject.Find ("TheLevelStuff");
+		if (lvl != null)
+			GameObject.Destroy (lvl);
+		lvl = new GameObject ("TheLevelStuff");
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
 		}
@@ -27,6 +35,7 @@ public class LevelLoader : MonoBehaviour
 		}
 		if (layer.entities != null) {
 			foreach (var entity in layer.entities) {
+				LoadEntity (entity);
 			}
 		}
 	}
@@ -39,7 +48,11 @@ public class LevelLoader : MonoBehaviour
 		if (go != null) {
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
-			go.transform.position = new Vector3 (tile.x, tile.y, 0f);
+			OTObject ot = go.GetComponent<OTObject> ();
+			if (ot != null)
+				ot.position = new Vector2 (tile.x, tile.y);
+			else
+				go.transform.position = new Vector3 (tile.x, tile.y, 0f);
 		}
 	}
 	
@@ -49,7 +62,11 @@ public class LevelLoader : MonoBehaviour
 		if (go != null) {
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
-			go.transform.position = new Vector3 (entity.x * 0.0625f, entity.y * 0.0625f, 0f);
+			OTObject ot = go.GetComponent<OTObject> ();
+			if (ot != null)
+				ot.position = new Vector2 (entity.x * 0.0625f, entity.y * 0.0625f);
+			else
+				go.transform.position = new Vector3 (entity.x * 0.0625f, entity.y * 0.0625f, 0f);
 		}
 	}
 	
