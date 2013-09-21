@@ -12,7 +12,7 @@ public class LevelLoader : MonoBehaviour
 	void Awake ()
 	{
 		if (levels != null && levels.Length > 0) {
-			LoadNextLevel();
+			LoadNextLevel ();
 		}
 	}
 	
@@ -21,8 +21,8 @@ public class LevelLoader : MonoBehaviour
 		if (lvl == null)
 			lvl = GameObject.Find ("TheLevelStuff");
 		if (lvl != null)
-			GameObject.Destroy (lvl);
-		levelIndex = levels.IndexOf (level);
+			GameObject.Destroy (lvl);		
+		levelIndex = System.Array.IndexOf (levels, level);
 		lvl = new GameObject ("TheLevelStuff");
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
@@ -31,12 +31,12 @@ public class LevelLoader : MonoBehaviour
 	
 	public void LoadNextLevel ()
 	{
-		LoadLevel (levels (++levelIndex));
+		LoadLevel (new OgmoLevel (levels [++levelIndex]));
 	}
 	
 	public void ReloadLevel ()
 	{
-		LoadLevel (levels (levelIndex));
+		LoadLevel (new OgmoLevel (levels [levelIndex]));
 	}
 	
 	private void LoadLayer (OgmoLayer layer)
