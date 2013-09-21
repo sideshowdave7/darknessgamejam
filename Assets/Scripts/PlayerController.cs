@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		var input = new Vector3(Input.GetAxis ("Horizontal"),Input.GetAxis ("Vertical"), 0f);
+		var input = new Vector3(Input.GetAxis ("Horizontal"),0f, Input.GetAxis ("Vertical"));
 		var togglePower = Input.GetButtonDown("TogglePower");
 		
 		if (togglePower && !prevTogglePower){
