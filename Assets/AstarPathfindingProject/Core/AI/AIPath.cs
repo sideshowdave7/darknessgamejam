@@ -415,8 +415,6 @@ public class AIPath : MonoBehaviour {
 	 * Rotates around the Y-axis.
 	 * \see turningSpeed
 	 */
-	
-	
 	protected virtual void RotateTowards (Vector3 dir) {
 		Quaternion rot = tr.rotation;
 		Quaternion toTarget = Quaternion.LookRotation (dir);
