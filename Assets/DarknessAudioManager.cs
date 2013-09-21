@@ -12,6 +12,10 @@ public class DarknessAudioManager  : MonoBehaviour
 	private List<AudioSource> _deleted = null;
 	private static DarknessAudioManager _instance = null;
 	
+	
+	public List<string> _allLayers;
+	public List<string> _muteLayers;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,21 +29,52 @@ public class DarknessAudioManager  : MonoBehaviour
 		_deleted = new List<AudioSource> ();
 		DontDestroyOnLoad(this);
 		
+		_allLayers.Add("Darkness-bass1");
+		_allLayers.Add("Darkness-bass2");
+		_allLayers.Add("Darkness-bass3");
+		_allLayers.Add("Darkness-melody");
 		
-		foreach (var clip in audioClips){
-		
-			PlayOneShot ("Darkness-bass1","AudioManager",true);
-			PlayOneShot ("Darkness-bass2","AudioManager",true);
-			PlayOneShot ("Darkness-bass3","AudioManager",true);
-			PlayOneShot ("Darkness-melody","AudioManager",true);
-		}
-		
+		_muteLayers.Add ("Darkness-melody");
+		_muteLayers.Add ("Darkness-bass3");
+
+		PlayOneShot ("Darkness-bass1","AudioManager",true);
+		PlayOneShot ("Darkness-bass2","AudioManager",true);
+		PlayOneShot ("Darkness-bass3","AudioManager",true);
+		PlayOneShot ("Darkness-melody","AudioManager",true);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		
+	}
 	
+	public void muteLayers(float target)
+	{
+		
+		foreach (var clipname in _muteLayers)
+		{
+			var _as = findAudioSource(clipname);
+			
+				if (_as != null){
+					FadeMusic(_as,target);
+				}
+		}
+	}
+	
+	
+	private AudioSource findAudioSource(string clipname){
+	
+		foreach (var _as in _audioSources){
+		
+			if (_as.clip.name == clipname){
+				return _as;	
+			}
+			
+		}
+		
+		return null;
+		
 	}
 	
 	void FixedUpdate ()

@@ -112,16 +112,53 @@ Prefab:
     - target: {fileID: 2300000, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1043662420}
+      objectReference: {fileID: 219480439}
     - target: {fileID: 3300000, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 385464234}
+      objectReference: {fileID: 1783490386}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
   m_RootGameObject: {fileID: 1446429679}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!21 &219480439
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: OTMaterial-transparent
+  m_Shader: {fileID: 10721, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: []
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _InvFade
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .5, g: .5, b: .5, a: .5}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
 --- !u!1 &311254070
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +184,10 @@ Transform:
   m_LocalPosition: {x: 21.1866798, y: 14.8388662, z: -14.9551516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1771980601}
+  - {fileID: 959067031}
   - {fileID: 1540536416}
+  - {fileID: 1771980601}
+  - {fileID: 2011160852}
   m_Father: {fileID: 1446429680}
 --- !u!1 &315988407
 GameObject:
@@ -251,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!43 &385464234
+--- !u!43 &349590925
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -328,7 +367,7 @@ Mesh:
       dividerOp: 0
       frequency: 0
     m_DataSize: 144
-    _typelessdata: 000000bf0000003f000000000000000000000000000080bfffffffff000000000000803f0000003f0000003f000000000000000000000000000080bfffffffffcdcc4c3e0000803f0000003f000000bf000000000000000000000000000080bfffffffffcdcc4c3e00000000000000bf000000bf000000000000000000000000000080bfffffffff0000000000000000
+    _typelessdata: 000000bf0000003f000000000000000000000000000080bfffffffff000000000000803f0000003f0000003f000000000000000000000000000080bfffffffff0000003e0000803f0000003f000000bf000000000000000000000000000080bfffffffff0000003e0000003f000000bf000000bf000000000000000000000000000080bfffffffff000000000000003f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -414,6 +453,8 @@ Transform:
   m_LocalPosition: {x: -276.670624, y: 15.0754004, z: 17.6875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2089316867}
+  - {fileID: 1020798103}
   - {fileID: 1459740359}
   m_Father: {fileID: 1446429680}
 --- !u!1 &629063282
@@ -495,6 +536,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &959067030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 959067031}
+  - 114: {fileID: 959067033}
+  - 114: {fileID: 959067032}
+  m_Layer: 0
+  m_Name: cockroach container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &959067031
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 959067030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311254071}
+--- !u!114 &959067032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400020, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 959067030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &959067033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400022, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 959067030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: cockroach container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 5, y: 1}
+  _frameSize: {x: 8, y: 8}
 --- !u!1 &961819605
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +606,10 @@ GameObject:
   - 114: {fileID: 961819608}
   - 33: {fileID: 961819607}
   - 23: {fileID: 961819606}
+  - 114: {fileID: 961819611}
+  - 65: {fileID: 961819610}
   m_Layer: 0
-  m_Name: Cockroach-1
+  m_Name: Cockroach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +628,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1043662420}
+  - {fileID: 1188155815}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -539,7 +641,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1885924810}
   m_GameObject: {fileID: 961819605}
-  m_Mesh: {fileID: 1304780494}
+  m_Mesh: {fileID: 349590925}
 --- !u!114 &961819608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,19 +654,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0774980171c514ea93208b47048a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Cockroach-1
-  _position: {x: 11, y: 9}
-  _size: {x: .5, y: .5}
+  _name: Cockroach
+  _position: {x: 12.14182, y: 8.07524681}
+  _size: {x: .25, y: 1}
   _rotation: 0
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
   _registerInput: 0
   _depth: 0
   _collidable: 0
-  _physics: 0
+  _physics: 5
   _colliderType: 0
-  _collisionDepth: 0
-  _collisionSize: .400000006
+  _collisionDepth: 1
+  _collisionSize: 0
   draggable: 0
   dragButton: 0
   init: 0
@@ -576,7 +678,7 @@ MonoBehaviour:
     height: 0
   protoType: 
   baseName: Cockroach
-  oSize: {x: 1.06666672, y: 1.06666672}
+  oSize: {x: 2.13333344, y: 2.13333344}
   imageSize: {x: 0, y: 0}
   _offset: {x: 0, y: 0}
   _baseOffset: {x: 0, y: 0}
@@ -591,8 +693,8 @@ MonoBehaviour:
   sizeImages: []
   _frameIndex: 0
   _frameName: frame0
-  _spriteContainer: {fileID: 1771980602}
-  _containerName: cockroach container
+  _spriteContainer: {fileID: 2011160854}
+  _containerName: mouse container
   _newSprite: 0
   _animation: {fileID: 1459740360}
   _animationFrameset: 
@@ -603,7 +705,7 @@ MonoBehaviour:
   _startAtRandomFrame: 0
   _destroyWhenFinished: 0
   animationPreview: 0
-  _animationName: Cockroach animation
+  _animationName: mouse animation
 --- !u!4 &961819609
 Transform:
   m_ObjectHideFlags: 0
@@ -611,10 +713,35 @@ Transform:
   m_PrefabInternal: {fileID: 1885924810}
   m_GameObject: {fileID: 961819605}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 11, y: .00789999962, z: 9}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalPosition: {x: 12.14182, y: .00686106458, z: 8.07524681}
+  m_LocalScale: {x: .25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!65 &961819610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 4232994894df8594fbe758f2895fcf42,
+    type: 2}
+  m_PrefabInternal: {fileID: 1885924810}
+  m_GameObject: {fileID: 961819605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.00000024, z: 1}
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!114 &961819611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 4232994894df8594fbe758f2895fcf42,
+    type: 2}
+  m_PrefabInternal: {fileID: 1885924810}
+  m_GameObject: {fileID: 961819605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f4e84a1ab9a0e44ae9b10321a5d2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019820441
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +800,97 @@ MonoBehaviour:
   gizmosColor: {r: .161764681, g: .148875058, b: 0, a: 1}
   cameraDepth: 1000
   cameraRange: 2001
+--- !u!1 &1020798102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1020798103}
+  - 114: {fileID: 1020798104}
+  m_Layer: 0
+  m_Name: Gorilla animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020798103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 1020798102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287.32251, y: -15.8438473, z: -35.0691948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 600187904}
+--- !u!114 &1020798104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400026, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 1020798102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Gorilla animation
+  _fps: 3
+  _duration: 4
+  framesets:
+  - name: down
+    container: {fileID: 1771980602}
+    startFrame: 0
+    endFrame: 2
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 0
+    _containerName: Gorilla container
+  - name: left
+    container: {fileID: 1771980602}
+    startFrame: 3
+    endFrame: 5
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 3
+    _containerName: Gorilla container
+  - name: right
+    container: {fileID: 1771980602}
+    startFrame: 6
+    endFrame: 8
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 6
+    _containerName: Gorilla container
+  - name: up
+    container: {fileID: 1771980602}
+    startFrame: 9
+    endFrame: 11
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 9
+    _containerName: Gorilla container
 --- !u!1 &1041322661
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +924,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d1b81a388a88d1047b46242df6fe3a7f, type: 3}
   - {fileID: 8300000, guid: 18c87387e6eeedd4696ae7e75da6853e, type: 3}
   - {fileID: 8300000, guid: 71452576c95a29d48b5d3b12b5f54792, type: 3}
+  _allLayers: []
+  _muteLayers:
+  - Darkness-bass1
+  - Darkness-melody
 --- !u!4 &1041322663
 Transform:
   m_ObjectHideFlags: 0
@@ -717,7 +939,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!21 &1043662420
+--- !u!21 &1188155815
 Material:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -733,7 +955,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
+          m_Texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -796,7 +1018,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 1043662420}
+  - {fileID: 219480439}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -809,7 +1031,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 46449015}
   m_GameObject: {fileID: 1248625904}
-  m_Mesh: {fileID: 385464234}
+  m_Mesh: {fileID: 1783490386}
 --- !u!114 &1248625908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,10 +1083,10 @@ MonoBehaviour:
   sizeImages: []
   _frameIndex: 0
   _frameName: frame0
-  _spriteContainer: {fileID: 1771980602}
+  _spriteContainer: {fileID: 959067033}
   _containerName: cockroach container
   _newSprite: 0
-  _animation: {fileID: 1459740360}
+  _animation: {fileID: 2089316868}
   _animationFrameset: 
   _speed: 1
   _looping: 1
@@ -943,144 +1165,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!43 &1304780494
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: .5, y: .5, z: 0}
-  m_Shapes: []
-  m_ShapeVertices: []
-  m_MeshCompression: 0
-  m_StreamCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexBuffer: 000001000200020003000000
-  m_Skin: []
-  m_BindPose: []
-  m_VertexData:
-    m_CurrentChannels: 15
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 2
-      dimension: 1
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_Streams:
-    - channelMask: 15
-      offset: 0
-      stride: 36
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
-      offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
-      offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
-    - channelMask: 0
-      offset: 0
-      stride: 0
-      dividerOp: 0
-      frequency: 0
-    m_DataSize: 144
-    _typelessdata: 000000bf0000003f000000000000000000000000000080bfffffffff000000000000803f0000003f0000003f000000000000000000000000000080bfffffffffcdcc4c3e0000803f0000003f000000bf000000000000000000000000000080bfffffffffcdcc4c3e00000000000000bf000000bf000000000000000000000000000080bfffffffff0000000000000000
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BindPoses:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Colors:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: .5, y: .5, z: 0}
-  m_MeshUsageFlags: 0
-  m_MeshOptimized: 0
 --- !u!1 &1382115681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1345,7 @@ GameObject:
   - 4: {fileID: 1459740359}
   - 114: {fileID: 1459740360}
   m_Layer: 0
-  m_Name: Cockroach animation
+  m_Name: mouse animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1290,14 +1374,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Cockroach animation
-  _fps: 10
-  _duration: .5
+  _name: mouse animation
+  _fps: 8.88888931
+  _duration: .899999976
   framesets:
-  - name: 
-    container: {fileID: 1771980602}
+  - name: down
+    container: {fileID: 2011160854}
     startFrame: 0
-    endFrame: 4
+    endFrame: 1
     frameNames: []
     frameNameMask: 
     sortFrameNames: 0
@@ -1305,7 +1389,43 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 0
-    _containerName: cockroach container
+    _containerName: mouse container
+  - name: up
+    container: {fileID: 2011160854}
+    startFrame: 2
+    endFrame: 3
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 2
+    _containerName: mouse container
+  - name: left
+    container: {fileID: 2011160854}
+    startFrame: 4
+    endFrame: 5
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 4
+    _containerName: mouse container
+  - name: right
+    container: {fileID: 2011160854}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 6
+    _containerName: mouse container
 --- !u!1 &1540536415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1573,7 @@ GameObject:
   - 114: {fileID: 1771980602}
   - 114: {fileID: 1771980603}
   m_Layer: 0
-  m_Name: cockroach container
+  m_Name: Gorilla container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1482,13 +1602,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: cockroach container
+  _name: Gorilla container
   _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
+  texture: {fileID: 2800000, guid: d236f0f9febfc21428b3332895d71097, type: 3}
   sizeTextures: []
   generateSprites: 0
-  _framesXY: {x: 5, y: 1}
-  _frameSize: {x: 8, y: 8}
+  _framesXY: {x: 3, y: 4}
+  _frameSize: {x: 32, y: 32}
 --- !u!114 &1771980603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,6 +1621,144 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!43 &1783490386
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: .5, y: .5, z: 0}
+  m_Shapes: []
+  m_ShapeVertices: []
+  m_MeshCompression: 0
+  m_StreamCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexBuffer: 000001000200020003000000
+  m_Skin: []
+  m_BindPose: []
+  m_VertexData:
+    m_CurrentChannels: 15
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 2
+      dimension: 1
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_Streams:
+    - channelMask: 15
+      offset: 0
+      stride: 36
+      dividerOp: 0
+      frequency: 0
+    - channelMask: 0
+      offset: 0
+      stride: 0
+      dividerOp: 0
+      frequency: 0
+    - channelMask: 0
+      offset: 0
+      stride: 0
+      dividerOp: 0
+      frequency: 0
+    - channelMask: 0
+      offset: 0
+      stride: 0
+      dividerOp: 0
+      frequency: 0
+    m_DataSize: 144
+    _typelessdata: 000000bf0000003f000000000000000000000000000080bfffffffff000000000000803f0000003f0000003f000000000000000000000000000080bfffffffffcdcc4c3e0000803f0000003f000000bf000000000000000000000000000080bfffffffffcdcc4c3e00000000000000bf000000bf000000000000000000000000000080bfffffffff0000000000000000
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BindPoses:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Colors:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: .5, y: .5, z: 0}
+  m_MeshUsageFlags: 0
+  m_MeshOptimized: 0
 --- !u!1001 &1885924810
 Prefab:
   m_ObjectHideFlags: 0
@@ -1510,15 +1768,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 12.14182
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .00789999962
+      value: .00686106458
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 8.07524681
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1539,26 +1797,26 @@ Prefab:
     - target: {fileID: 2300000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1043662420}
+      objectReference: {fileID: 1188155815}
     - target: {fileID: 3300000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1304780494}
+      objectReference: {fileID: 349590925}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _spriteContainer
       value: 
-      objectReference: {fileID: 1771980602}
+      objectReference: {fileID: 2011160854}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _animation
       value: 
       objectReference: {fileID: 1459740360}
     - target: {fileID: 100000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_Name
-      value: Cockroach-1
+      value: Cockroach
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _containerName
-      value: cockroach container
+      value: mouse container
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _image
@@ -1566,22 +1824,156 @@ Prefab:
       objectReference: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalScale.x
-      value: .5
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _size.x
-      value: .5
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: m_LocalScale.y
-      value: .5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
       propertyPath: _size.y
-      value: .5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
+      propertyPath: _collisionSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
+      propertyPath: _animationName
+      value: mouse animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
+      propertyPath: m_Center.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
+      propertyPath: oSize.x
+      value: 2.13333344
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
+      propertyPath: oSize.y
+      value: 2.13333344
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4232994894df8594fbe758f2895fcf42, type: 2}
   m_RootGameObject: {fileID: 961819605}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &2011160851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100024, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2011160852}
+  - 114: {fileID: 2011160854}
+  - 114: {fileID: 2011160853}
+  m_Layer: 0
+  m_Name: mouse container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011160852
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400024, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 2011160851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311254071}
+--- !u!114 &2011160853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400030, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 2011160851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2011160854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400028, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 2011160851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: mouse container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 8, y: 2}
+  _frameSize: {x: 16, y: 16}
+--- !u!1 &2089316866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2089316867}
+  - 114: {fileID: 2089316868}
+  m_Layer: 0
+  m_Name: Cockroach animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2089316867
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: 711aeb00936dc444ab148e3338a933c7, type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 2089316866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 292.746155, y: -110.119194, z: -39.5583496}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 600187904}
+--- !u!114 &2089316868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400024, guid: 711aeb00936dc444ab148e3338a933c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 46449015}
+  m_GameObject: {fileID: 2089316866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Cockroach animation
+  _fps: 10
+  _duration: .5
+  framesets:
+  - name: 
+    container: {fileID: 959067033}
+    startFrame: 0
+    endFrame: 4
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 0
+    _containerName: cockroach container
