@@ -39,6 +39,10 @@ public class DarknessAudioManager  : MonoBehaviour
 		
 		_muteLayers.Add ("Darkness-melody");
 		_muteLayers.Add ("Darkness-bass3");
+		_muteLayers.Add ("Darkness-bass2");
+		_muteLayers.Add ("Darkness-bass1");
+		
+		
 		
 		mutingLayers=false;
 
@@ -164,13 +168,13 @@ public class DarknessAudioManager  : MonoBehaviour
 		
 		    while(_as.volume > target + .1f)
 		    {
-		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime);
+		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
 		        yield return 0;
 		    }
 		} else {
 			while(_as.volume < target - .1f)
 		    {
-		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime);
+		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
 		        yield return 0;
 		    }
 		}

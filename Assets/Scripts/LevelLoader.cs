@@ -95,7 +95,7 @@ public class LevelLoader : MonoBehaviour
 	private GameObject GetPrefab (string path)
 	{
 		GameObject go;
-		go = (GameObject)Resources.Load (path);
+		go = (GameObject)Resources.Load (path,typeof(GameObject));
 		return go;
 	}
 }
