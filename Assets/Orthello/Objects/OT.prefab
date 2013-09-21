@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: OT
   m_TagString: Untagged
@@ -94,6 +95,22 @@ GameObject:
 --- !u!1002 &100009
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400010}
+  - 114: {fileID: 11400008}
+  m_Layer: 0
+  m_Name: Container (id=-657254)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -118,8 +135,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 7.5, z: -1000}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 10, y: 1000, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -135,7 +152,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.1866798, y: 14.8388662, z: -14.9551516}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 400010}
   m_Father: {fileID: 400000}
 --- !u!1002 &400005
 EditorExtensionImpl:
@@ -168,6 +186,17 @@ Transform:
 --- !u!1002 &400009
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.3553524, y: -5.90921402, z: 13.5886965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +255,7 @@ MonoBehaviour:
     fieldAlphaChannel: 
     fieldAlphaColor: _Color
     material: {fileID: 2100000, guid: 13b802328ac3e4c3f8f13bde888ac538, type: 2}
-  _world: 0
+  _world: 1
   deactivatePrototypes: 1
   _debug: 0
   _reset: 0
@@ -262,7 +291,7 @@ MonoBehaviour:
   customSize: 16
   drawGizmos: 1
   gizmosColor: {r: .161764681, g: .148875058, b: 0, a: 1}
-  cameraDepth: -1000
+  cameraDepth: 1000
   cameraRange: 2001
 --- !u!1002 &11400003
 EditorExtensionImpl:
@@ -294,6 +323,129 @@ MonoBehaviour:
   mute: 0
   volume: 1
   soundClips: []
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd20d0dc874d12479ce5074a312c9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Container (id=-657254)
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: e45446e20d15bfa418338efdf635408b, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  atlasData:
+  - name: 0_0
+    position: {x: 0, y: 0}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 0_1
+    position: {x: 16, y: 0}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 0_2
+    position: {x: 32, y: 0}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 0_3
+    position: {x: 48, y: 0}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 1_0
+    position: {x: 0, y: 16}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 1_1
+    position: {x: 16, y: 16}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 1_2
+    position: {x: 32, y: 16}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 1_3
+    position: {x: 48, y: 16}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 2_0
+    position: {x: 0, y: 32}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 2_1
+    position: {x: 16, y: 32}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 2_2
+    position: {x: 32, y: 32}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  - name: 2_3
+    position: {x: 48, y: 32}
+    offset: {x: -0, y: -0}
+    rotated: 0
+    size: {x: 16, y: 16}
+    frameSize: {x: 0, y: 0}
+    metaData: []
+  offsetSizing: 1
+  metaType: 
+  metaData: []
+  _atlasDataFile: {fileID: 4900000, guid: 89d8522562457a243a3fa523a3589bd2, type: 3}
+  reloadData: 0
+  bytesDataFile: 851
+  id: 2
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992afb4f487a16e459c46d9db2709559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 4900000, guid: ddde2036fa338f94196846483fe9b8f2, type: 3}
+  zoneFolder: zone1/
+  lvl: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
