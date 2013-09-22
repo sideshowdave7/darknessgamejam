@@ -401,6 +401,7 @@ public class OTAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
         if (!OT.isValid || !Ready()) return;
 
         if (!registered || !Application.isPlaying)
