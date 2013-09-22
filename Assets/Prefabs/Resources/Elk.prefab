@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Elk
   _position: {x: -5.58918428, y: .5}
-  _size: {x: 2, y: 2}
+  _size: {x: 1.89999998, y: 1.89999998}
   _rotation: 0
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
