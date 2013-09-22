@@ -36,16 +36,16 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Scale
-        second: -1.08000004
-      data:
-        first:
           name: _Shininess
         second: .699999988
       data:
         first:
           name: _InvFade
         second: 1
+      data:
+        first:
+          name: _Scale
+        second: -1.08000004
     m_Colors:
       data:
         first:
@@ -53,20 +53,12 @@ Material:
         second: {r: .99444443, g: .98888886, b: 1, a: .920000017}
       data:
         first:
-          name: _Tint
+          name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _FadeColor
-        second: {r: 1, g: 1, b: 1, a: .23137255}
       data:
         first:
           name: _TintColor
@@ -75,6 +67,14 @@ Material:
         first:
           name: _EmisColor
         second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
+      data:
+        first:
+          name: _Tint
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _FadeColor
+        second: {r: 1, g: 1, b: 1, a: .23137255}
       data:
         first:
           name: _Amb

@@ -31,12 +31,12 @@ Material:
         second: {r: .332805037, g: 1, b: .17349565, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: .000488802558, g: .198979616, b: .0409471393, a: 0}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: .000488802558, g: .198979616, b: .0409471393, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

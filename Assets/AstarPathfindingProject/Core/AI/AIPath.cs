@@ -47,6 +47,8 @@ public class AIPath : MonoBehaviour {
 	 */
 	public Transform target;
 	
+	protected GameObject[] navPoints;
+	
 	/** Enables or disables searching for paths.
 	 * Setting this to false does not stop any active path requests from being calculated or stop it from continuing to follow the current path.
 	 * \see #canMove
@@ -127,6 +129,7 @@ public class AIPath : MonoBehaviour {
 	
 	/** Only when the previous path has been returned should be search for a new path */
 	protected bool canSearchAgain = true;
+
 	
 	/** Returns if the end-of-path has been reached
 	 * \see targetReached */
@@ -134,6 +137,29 @@ public class AIPath : MonoBehaviour {
 		get {
 			return targetReached;
 		}
+	}
+	
+	protected int currentNav = 0;
+	
+	protected Transform navManage(){
+		
+		if( navPoints == null )
+			return null;
+		
+		if( currentNav >= navPoints.Length )
+			currentNav = 0;
+
+		
+		bool test = ( transform.position - navPoints[currentNav].transform.position ).magnitude <= endReachedDistance;
+		
+		if( !test )
+		{
+			return navPoints[currentNav].transform;
+		}
+		else{
+			return navPoints[currentNav++].transform;
+			}
+		
 	}
 	
 	/** Holds if the Start function has been run.
@@ -225,8 +251,8 @@ public class AIPath : MonoBehaviour {
 	/** Requests a path to the target */
 	public virtual void SearchPath () {
 		
-		if (target == null) //{ Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
-			target = GameObject.FindGameObjectWithTag( "Player" ).transform;
+//		if (target == null) //{ Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
+			target = navManage();
 		if (target == null)
 			return;
 		lastRepath = Time.time;
@@ -244,11 +270,15 @@ public class AIPath : MonoBehaviour {
 	}
 	
 	public virtual void OnTargetReached () {
+			
 		//End of path has been reached
 		//If you want custom logic for when the AI has reached it's destination
 		//add it here
 		//You can also create a new script which inherits from this one
 		//and override the function in that script
+		
+	
+	
 	}
 	
 	public void OnDestroy () {
@@ -304,7 +334,9 @@ public class AIPath : MonoBehaviour {
 		return tr.position;
 	}
 	
-	public virtual void AIPathCall () {
+	public virtual void AIPathCall ( GameObject[] navPoints ) {
+		
+		this.navPoints = navPoints;
 		
 		if (!canMove) { return; }
 		
@@ -396,7 +428,7 @@ public class AIPath : MonoBehaviour {
 		this.targetPoint = targetPosition;
 		
 		if (currentWaypointIndex == vPath.Count-1 && targetDist <= endReachedDistance) {
-			if (!targetReached) { targetReached = true; OnTargetReached (); }
+			if (!targetReached) { targetReached = true; /*OnTargetReached ();*/ }
 			
 			//Send a move request, this ensures gravity is applied
 			return Vector3.zero;

@@ -9,44 +9,47 @@ public class ActorControl : MonoBehaviour {
 	public
 		float viewDistance = 0;
 	public
-		int aware, health, speed, behavior, damage, countDown, ignoreThis;	
+		int aware, health, speed, behavior, damage, countDown;	
+	public
+		GameObject[] navPoints;
+	
+	protected 
+		int timeKeeper;
+	protected
 		GameObject Actor, Player;
 		
 	
-	 void Start(){
-		//Get player object
-		
+	 void Start(){	
 	 	this.position = transform.position;
 		Player = GameObject.FindGameObjectWithTag( "Player" );
-		
 	}
 
 	void detect(){
-
+		if( Player == null )
+			return;
 		RaycastHit hitInfo;
 		bool isHit;
 		Ray test = new Ray( collider.bounds.center,  Player.collider.bounds.center - collider.bounds.center );
 		
 		isHit = Physics.Raycast ( test, out hitInfo, viewDistance );
 		
-		if( isHit && hitInfo.collider.tag == "Player" ) setAware( 1 );
+		if( isHit && hitInfo.collider.tag == "Player" )
+		{
+			setAware( 1 );
+			timeKeeper = 0;
+		}
 		else setAware( 0 );
+		
+		
 		
 		if( aware == 1 )
 			behavior = 1;
 	}
 
 	void move(){
-		switch( behavior )
-		{
-			case 0: //some passive stuff 
-				break;
-			case 1: gameObject.SendMessage ( "AIPathCall", SendMessageOptions.DontRequireReceiver );
-				break;
-			
+		gameObject.SendMessage ( "AIPathCall", navPoints , SendMessageOptions.DontRequireReceiver );
 		}
-	}
-
+	
 	void attack(){
 		// get proximity to player
 		// if( proximity <= range )
@@ -54,11 +57,12 @@ public class ActorControl : MonoBehaviour {
 	}
 
 	void  coolOff(){
-		if( aware == 0 && behavior == 1 && ignoreThis >= countDown )
-			ignoreThis = 0;
-		if( ignoreThis <= countDown )
-			ignoreThis++;
-		else behavior = 0;
+		if( aware == 0 && behavior == 1 ){
+			if(  timeKeeper * Time.deltaTime > countDown )
+			{
+				behavior = 0;
+			}
+		}
 	}
 
 	int  getAware(){
@@ -79,11 +83,10 @@ public class ActorControl : MonoBehaviour {
 
 	int  getDamage(){
 		return this.damage;
-		//return this;
 	}
 
-	void  setDamage( int attack ){
-		//this.attack = attack;
+	void  setDamage( int damage ){
+		this.damage = damage;
 	}
 
 	int  getSpeed(){
