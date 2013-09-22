@@ -66,7 +66,7 @@ public class OgmoLayer
 	}
  
 	protected void ParseTileLayer (XmlNode layerNode, int width, int height)
-	{
+	{/*
 		tiles = new List<OgmoTile> (layerNode.ChildNodes.Count);
 		foreach (XmlElement element in layerNode) {
 			tiles.Add (new OgmoTile{
@@ -75,5 +75,6 @@ public class OgmoLayer
 				y = int.Parse (element.GetAttribute ("y"))
 			});
 		}
+		*/
 	}
 }

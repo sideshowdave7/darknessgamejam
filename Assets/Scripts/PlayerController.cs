@@ -12,17 +12,8 @@ public class PlayerController : MonoBehaviour
 	void Start ()
 	{
 		prevTogglePower = false;
-		flash = gameObject.AddComponent<Flash>();
 	}
 	
-	void Flash (float duration) {
-     flash.enabled = true;
-     Invoke("Cancel", duration);
-	}
- 
-	void Cancel () {
-	    flash.enabled = false;
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -31,8 +22,6 @@ public class PlayerController : MonoBehaviour
 		var togglePower = Input.GetButtonDown ("TogglePower");
 		
 		if (togglePower && !prevTogglePower) {
-			
-			Flash(1.0f);
 			
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
