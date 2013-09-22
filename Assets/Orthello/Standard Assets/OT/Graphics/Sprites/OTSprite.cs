@@ -1029,7 +1029,7 @@ public class OTSprite : OTObject
     override protected void CheckSettings()
     {
         base.CheckSettings();
-        if (OT.dirtyChecks || dirtyChecks)
+        /*if (OT.dirtyChecks || dirtyChecks)
         {
             if (spriteContainer != null && spriteContainer.isReady  && !(this is OTTextSprite))
             {																													
@@ -1096,6 +1096,7 @@ public class OTSprite : OTObject
             else
                 if (alpha > 1) _alpha = 1;
         }
+		*/
 }
 
 

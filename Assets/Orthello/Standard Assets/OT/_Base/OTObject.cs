@@ -1628,8 +1628,6 @@ public class OTObject : MonoBehaviour
 	                    b.isTrigger = false;
 	                }
 				}
-				else
-	                b.center = new Vector3(b.center.x, b.center.y, collisionDepth - depth);
             }
 
         }
