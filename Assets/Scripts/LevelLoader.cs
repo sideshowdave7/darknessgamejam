@@ -123,10 +123,10 @@ public class LevelLoader : MonoBehaviour
 		case "BearVert":
 		case "Gorilla":
 		case "GorillaVert":
-			size = new Vector2 (2, 3);
+			size = new Vector2 (2, 2);
 			break;	
 		case "Human":
-			size = new Vector2 (2, 3);
+			size = new Vector2 (2, 2);
 			break;
 		case "Player":
 			size = new Vector2 (1, 2);
