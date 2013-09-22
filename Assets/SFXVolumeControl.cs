@@ -20,7 +20,38 @@ public class SFXVolumeControl : MonoBehaviour {
 				var volume = (1/distance);
 				this.gameObject.GetComponent<AudioSource>().volume = Mathf.Clamp(volume,0f,1f);
 			}
-		}
+	}
+	
+		
+	IEnumerator FadePitchEnum(float target)
+	{
+		AudioSource _as = this.gameObject.GetComponent<AudioSource>();
+		
+		if (_as != null) {
+		
+			if (target < _as.volume){
+			
+			    while(_as.volume > target + .1f)
+			    {
+			        _as.pitch = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
+			        yield return 0;
+			    }
+			} else {
+				while(_as.volume < target - .1f)
+			    {
+			        _as.pitch = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
+			        yield return 0;
+			    }
+			}
+		    _as.pitch = target;
+		   
+			}
+	}
+	
+	public void FadePitch(float target)
+	{
+	    StartCoroutine(FadePitchEnum(target));
+	}
 		
 	
 }

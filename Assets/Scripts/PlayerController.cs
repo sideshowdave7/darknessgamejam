@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	public float move_speed;
-	public PlayerPowerEnum currentPower = PlayerPowerEnum.Normal;
+	public PlayerPowerEnum currentPower = PlayerPowerEnum.Visual;
 	private bool prevTogglePower;
 	public Flash flash;
 	
@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
 				foreach(TimeToggleThingy t in times){
 					t.setTimeSlow(false);
 				}
+				var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+				foreach (var enemy in enemies){
+					enemy.GetComponent<SFXVolumeControl>().FadePitch(1f);	
+				}
 				break;
 			case PlayerPowerEnum.Visual:
 				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
@@ -50,6 +54,12 @@ public class PlayerController : MonoBehaviour
 				foreach(TimeToggleThingy t in times){
 					t.setTimeSlow(true);
 				}
+				
+				var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+				foreach (var enemy in enemies){
+					enemy.GetComponent<SFXVolumeControl>().FadePitch(.8f);	
+				}
+				
 				break;
 			case PlayerPowerEnum.Visual:
 				var visuals = GameObject.FindObjectsOfType(typeof(VisibleToggleSpritesThingy));
@@ -70,7 +80,6 @@ public class PlayerController : MonoBehaviour
 	public enum PlayerPowerEnum
 	{
 		
-		Normal,
 		Visual,
 		Audio,
 		Time,

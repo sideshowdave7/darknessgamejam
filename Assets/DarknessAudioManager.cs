@@ -186,4 +186,7 @@ public class DarknessAudioManager  : MonoBehaviour
 	{
 	    StartCoroutine(FadeMusicEnum(_as,target));
 	}
+	
+	
+
 }

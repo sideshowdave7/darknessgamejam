@@ -20,7 +20,7 @@ GameObject:
   - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Cockroach
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   behavior: 0
   damage: 0
   countDown: 0
-  ignoreThis: 0
+  navPoints: []
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
