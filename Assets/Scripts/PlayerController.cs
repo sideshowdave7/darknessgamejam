@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 	{
 		prevTogglePower = false;
 		SetCurrentPower(PlayerPowerEnum.Visual);
+		this.gameObject.GetComponent<OTAnimatingSprite>().flipHorizontal = true;
+		this.gameObject.GetComponent<OTAnimatingSprite>().flipHorizontal = false;
 	}	
 	
 	// Update is called once per frame
@@ -28,6 +30,13 @@ public class PlayerController : MonoBehaviour
 		}
 		
 		this.rigidbody.velocity = (Vector3.Normalize (input) * move_speed);
+		
+		
+		if (input.x >= 0){
+			this.gameObject.GetComponent<OTAnimatingSprite>().flipHorizontal = true;	
+		} else {
+			this.gameObject.GetComponent<OTAnimatingSprite>().flipHorizontal = false;	
+		}
 		
 		prevTogglePower = togglePower;
 	}
