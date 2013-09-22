@@ -10,10 +10,12 @@ public class LargeMovementControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		if (alignment == "horizontal")
+		if (alignment == "horizontal") {
 			dir = Vector3.right;
-		else 
+		}
+		else if (alignment == "vertical"){
 			dir = Vector3.back;			
+		}
 	}
 	
 	// Update is called once per frame
