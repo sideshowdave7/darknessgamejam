@@ -13,7 +13,7 @@ public class LargeMovementControl : MonoBehaviour {
 		if (alignment == "horizontal") {
 			dir = Vector3.right;
 		}
-		else if (alignment == "verticl"){
+		else if (alignment == "vertical"){
 			dir = Vector3.back;			
 		}
 	}
