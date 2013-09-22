@@ -15,13 +15,12 @@ public class OgmoLevel
 		name = xmlFile.name;
 		XmlDocument xml = new XmlDocument ();
 		xml.LoadXml (xmlFile.text);
-		XmlNode root = xml.FirstChild;
-		width = System.Convert.ToInt32 (root.Attributes.GetNamedItem ("width").Value);
-		height = System.Convert.ToInt32 (root.Attributes.GetNamedItem ("height").Value);
-		XmlNodeList children = root.ChildNodes;
+		XmlElement root = (XmlElement)xml.FirstChild;
+		width = int.Parse (root.GetAttribute ("width"));
+		height = int.Parse (root.GetAttribute ("height"));
 		layers = new Dictionary<string,OgmoLayer> ();
-		for (int ii = 0; ii < children.Count; ii++) {
-			OgmoLayer layer = new OgmoLayer (children [ii], width, height);
+		foreach (XmlElement child in root) {
+			OgmoLayer layer = new OgmoLayer (child, width, height);
 			layers [layer.name] = layer;
 		}
 	}

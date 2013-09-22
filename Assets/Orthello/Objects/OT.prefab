@@ -228,6 +228,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100026
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400026}
+  - 114: {fileID: 11400034}
+  - 114: {fileID: 11400032}
+  m_Layer: 0
+  m_Name: city tileset container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -253,7 +270,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 10, y: 1000, z: 7.5}
+  m_LocalPosition: {x: 0, y: 1000, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -270,6 +287,7 @@ Transform:
   m_LocalPosition: {x: 21.1866798, y: 14.8388662, z: -14.9551516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 400026}
   - {fileID: 400018}
   - {fileID: 400010}
   - {fileID: 400016}
@@ -373,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 100020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 292.746155, y: -110.119194, z: -39.5583496}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400022
@@ -393,6 +411,17 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+--- !u!4 &400026
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -502,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOverride: {fileID: 0}
   _zoom: 1
-  _position: {x: 10, y: 7.5}
+  _position: {x: 0, y: 0}
   _rotation: 0
   _movementTarget: {fileID: 0}
   _rotationTarget: {fileID: 0}
@@ -669,7 +698,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 4900000, guid: ddde2036fa338f94196846483fe9b8f2, type: 3}
+  - {fileID: 4900000, guid: c38e783afc3e3c44987073e191c7744a, type: 3}
+  - {fileID: 4900000, guid: fa224ad2876d239479ee8204a5f1cd17, type: 3}
+  - {fileID: 4900000, guid: a999dffc2a2c8a14e961821f8c9f5517, type: 3}
   zoneFolder: zone1/
   lvl: {fileID: 0}
 --- !u!114 &11400012
@@ -975,6 +1006,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: city tileset container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 7002a5ec7c4ffbf4c9f9a61e8539298f, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 10, y: 10}
+  _frameSize: {x: 16, y: 16}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

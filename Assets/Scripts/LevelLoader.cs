@@ -16,7 +16,13 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
-	private void LoadLevel (int index)
+	void Update ()
+	{
+		if(Input.GetKeyDown(KeyCode.L))
+			LoadNextLevel();
+	}
+	
+	private GameObject LoadLevel (int index)
 	{
 		if (lvl == null)
 			lvl = GameObject.Find ("TheLevelStuff");
@@ -28,16 +34,17 @@ public class LevelLoader : MonoBehaviour
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
 		}
+		return lvl;
 	}
 	
-	public void LoadNextLevel ()
+	public GameObject LoadNextLevel ()
 	{
-		LoadLevel (++levelIndex);
+		return LoadLevel (++levelIndex);
 	}
 	
-	public void ReloadLevel ()
+	public GameObject ReloadLevel ()
 	{
-		LoadLevel (levelIndex);
+		return LoadLevel (levelIndex);
 	}
 	
 	private void LoadLayer (OgmoLayer layer)
@@ -86,16 +93,16 @@ public class LevelLoader : MonoBehaviour
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
 			OTObject ot = go.GetComponent<OTObject> ();
-			go.transform.position = new Vector3 (entity.x * 0.0625f, 0.25f, -entity.y * 0.0625f);
+			go.transform.position = new Vector3 (((float)entity.x) / 16f, 0.25f, 15f - ((float)entity.y) / 16f);
 			if (ot != null)
-				ot.position = new Vector2 (entity.x * 0.0625f, entity.y * 0.0625f);
+				ot.position = new Vector2 (go.transform.position.x, go.transform.position.z);
 		}
 	}
 	
 	private GameObject GetPrefab (string path)
 	{
-		GameObject go;
-		go = (GameObject)Resources.Load (path);
-		return go;
+		UnityEngine.Object go;
+		go = Resources.Load (path);
+		return (go as GameObject);
 	}
 }
