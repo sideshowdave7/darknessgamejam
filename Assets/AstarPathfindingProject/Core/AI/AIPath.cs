@@ -146,6 +146,12 @@ public class AIPath : MonoBehaviour {
 		if( navPoints == null )
 			return null;
 		
+
+		if (navPoints.Length == 0){
+			
+			return null;
+		}
+		
 		if( currentNav >= navPoints.Length )
 			currentNav = 0;
 
@@ -252,7 +258,7 @@ public class AIPath : MonoBehaviour {
 	public virtual void SearchPath () {
 		
 //		if (target == null) //{ Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
-			target = navManage();
+		target = navManage();
 		if (target == null)
 			return;
 		lastRepath = Time.time;
