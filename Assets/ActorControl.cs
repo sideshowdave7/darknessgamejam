@@ -10,6 +10,8 @@ public class ActorControl : MonoBehaviour {
 		float viewDistance = 0, countDown;
 	public
 		int aware, health, speed, behavior, damage; 
+	
+	public bool justPatrol = false;
 		
 	public
 		GameObject[] navPoints;
@@ -48,18 +50,16 @@ public class ActorControl : MonoBehaviour {
 	}
 
 	void move(){
-		switch( behavior )
-		{
-		case 0:
-			
+		if (behavior == 0 || justPatrol){
 			gameObject.SendMessage( "AIPathCall", navPoints , SendMessageOptions.DontRequireReceiver );
-				break;
-		case 1:
+		} else if (behavior == 1){
+		
 			tempNavPoints = new GameObject[1];
 			tempNavPoints[0] = Player;
-			gameObject.SendMessage( "AIPathCall", tempNavPoints , SendMessageOptions.DontRequireReceiver );
-				break;
-		}	
+			if (!justPatrol){
+				gameObject.SendMessage( "AIPathCall", tempNavPoints , SendMessageOptions.DontRequireReceiver );
+			}
+		}
 	}
 	
 	void attack(){
