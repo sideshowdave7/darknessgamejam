@@ -61,8 +61,8 @@ public class LevelObjective : MonoBehaviour
 			}
 		
 			var oldLvl = ll.lvl;
-			var player = GameObject.FindGameObjectWithTag("Player");
-			GameObject.Destroy(player);
+			var player = GameObject.FindGameObjectWithTag ("Player");
+			GameObject.Destroy (player);
 			var newLvl = ll.LoadNextLevel (enterSource);
 			StartCoroutine (LevelTransition (oldLvl, newLvl, exitDest));
 		}
@@ -78,13 +78,15 @@ public class LevelObjective : MonoBehaviour
 		}
 		
 		foreach (Progress progress in AstarPath.active.ScanLoop ()) {
-				Debug.Log ("Rescanning paths");
+			Debug.Log ("Rescanning paths");
 		}
 		
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		
 		foreach (GameObject enemy in enemies) {
-			enemy.GetComponent<ActorControl>().isActive = true;
+			var actor = enemy.GetComponent<ActorControl> ();
+			if (actor != null)
+				actor.isActive = true;
 		}
 		
 		GameObject.Destroy (oldLevel);
