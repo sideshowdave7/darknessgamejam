@@ -238,8 +238,8 @@ MonoBehaviour:
   target: {fileID: 0}
   canSearch: 1
   canMove: 1
-  speed: 5
-  turningSpeed: 5
+  speed: 4.5
+  turningSpeed: 4.5
   slowdownDistance: .200000003
   pickNextWaypointDist: 2
   forwardLook: 1
