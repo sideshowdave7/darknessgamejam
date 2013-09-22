@@ -225,8 +225,10 @@ public class AIPath : MonoBehaviour {
 	/** Requests a path to the target */
 	public virtual void SearchPath () {
 		
-		if (target == null) { Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
-		
+		if (target == null) //{ Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
+			target = GameObject.FindGameObjectWithTag( "Player" ).transform;
+		if (target == null)
+			return;
 		lastRepath = Time.time;
 		//This is where we should search to
 		Vector3 targetPosition = target.position;

@@ -9,7 +9,7 @@ public class ActorControl : MonoBehaviour {
 	public
 		float viewDistance = 0;
 	public
-		int aware, health, speed, behavior, damage;	
+		int aware, health, speed, behavior, damage, countDown, ignoreThis;	
 		GameObject Actor, Player;
 		
 	
@@ -31,10 +31,13 @@ public class ActorControl : MonoBehaviour {
 		
 		if( isHit && hitInfo.collider.tag == "Player" ) setAware( 1 );
 		else setAware( 0 );
+		
+		if( aware == 1 )
+			behavior = 1;
 	}
 
 	void move(){
-		switch( aware )
+		switch( behavior )
 		{
 			case 0: //some passive stuff 
 				break;
@@ -42,7 +45,6 @@ public class ActorControl : MonoBehaviour {
 				break;
 			
 		}
-		// gameObject.SendMessage ( "AIPathCall", SendMessageOptions.DontRequireReceiver );
 	}
 
 	void attack(){
@@ -52,11 +54,11 @@ public class ActorControl : MonoBehaviour {
 	}
 
 	void  coolOff(){
-		// detect();
-		// if( !getState(); )
-		// start countdown...
-		// if( countdown >= maxTime )
-		// setBehavior( 0 );
+		if( aware == 0 && behavior == 1 && ignoreThis >= countDown )
+			ignoreThis = 0;
+		if( ignoreThis <= countDown )
+			ignoreThis++;
+		else behavior = 0;
 	}
 
 	int  getAware(){
