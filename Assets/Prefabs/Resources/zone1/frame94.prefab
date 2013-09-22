@@ -74,7 +74,7 @@ MonoBehaviour:
   _registerInput: 0
   _depth: 0
   _collidable: 0
-  _physics: 0
+  _physics: 5
   _colliderType: 0
   _collisionDepth: 0
   _collisionSize: .400000006
