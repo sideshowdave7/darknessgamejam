@@ -8,7 +8,7 @@ public class KillPlayer : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {		
-        if(other.gameObject.tag == "Player"){
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "player2" || other.name == "Player(Clone)"){
 			var ll = GameObject.FindObjectOfType(typeof(LevelLoader)) as LevelLoader;
 			if(ll!=null)
 				ll.ReloadLevel();
