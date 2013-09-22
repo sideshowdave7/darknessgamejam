@@ -11,7 +11,7 @@ public class ActorControl : MonoBehaviour {
 	public
 		int aware, health, speed, behavior, damage; 
 	
-	public bool justPatrol = false;
+	public bool justPatrol = false, isActive = false, prevIsActive = false;
 		
 	public
 		GameObject[] navPoints;
@@ -32,10 +32,6 @@ public class ActorControl : MonoBehaviour {
 		
 		globalNavPoints = new GameObject[navPoints.Length];
 		
-		for (int i = 0; i < navPoints.Length; i++){
-				globalNavPoints[i] = new GameObject("navPoint"+i.ToString());
-				globalNavPoints[i].transform.position += transform.position + navPoints[i].transform.localPosition;
-		}
 	}
 
 	void detect(){
@@ -138,9 +134,24 @@ public class ActorControl : MonoBehaviour {
 		if( Player == null )
 			Player = GameObject.FindGameObjectWithTag( "Player" );
 		
-		detect();
-		move();
-		attack();
-		coolOff();
+		
+		if (!prevIsActive && isActive) {
+			for (int i = 0; i < navPoints.Length; i++){
+					globalNavPoints[i] = new GameObject("navPoint"+i.ToString());
+					globalNavPoints[i].transform.position += transform.position + navPoints[i].transform.localPosition;
+			}
+		}
+		
+		if (isActive){
+		
+			detect();
+			move();
+			attack();
+			coolOff();
+			
+		}
+		
+		prevIsActive = isActive;
+
 	}
 }

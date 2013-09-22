@@ -81,6 +81,12 @@ public class LevelObjective : MonoBehaviour
 				Debug.Log ("Rescanning paths");
 		}
 		
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		
+		foreach (GameObject enemy in enemies) {
+			enemy.GetComponent<ActorControl>().isActive = true;
+		}
+		
 		GameObject.Destroy (oldLevel);
 	}
 	
