@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Cockroach
   _position: {x: -5.58918428, y: .5}
-  _size: {x: .899999976, y: .899999976}
+  _size: {x: .5, y: .5}
   _rotation: 0
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
