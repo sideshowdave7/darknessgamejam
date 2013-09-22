@@ -18,7 +18,8 @@ public class LargeMovementControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(dir * Time.deltaTime * speed);
+		transform.position += dir * Time.deltaTime * speed;
+		//transform.Translate(dir * Time.deltaTime * speed);
 		
 		if (change){
 			change = false;
