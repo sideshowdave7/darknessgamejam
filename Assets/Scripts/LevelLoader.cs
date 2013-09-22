@@ -16,6 +16,12 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
+	void Update ()
+	{
+		if(Input.GetKeyDown(KeyCode.L))
+			LoadNextLevel();
+	}
+	
 	private GameObject LoadLevel (int index)
 	{
 		if (lvl == null)
@@ -89,7 +95,7 @@ public class LevelLoader : MonoBehaviour
 			OTObject ot = go.GetComponent<OTObject> ();
 			go.transform.position = new Vector3 (((float)entity.x) / 16f, 0.25f, 15f - ((float)entity.y) / 16f);
 			if (ot != null)
-				ot.position = new Vector2 (((float)entity.x) / 16f, 15f - ((float)entity.y) / 16f);
+				ot.position = new Vector2 (go.transform.position.x, go.transform.position.z);
 		}
 	}
 	
