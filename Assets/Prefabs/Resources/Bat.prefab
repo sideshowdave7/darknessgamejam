@@ -160,7 +160,7 @@ MonoBehaviour:
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
   _registerInput: 0
-  _depth: 0
+  _depth: -1
   _collidable: 1
   _physics: 5
   _colliderType: 0

@@ -119,10 +119,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
-  - 114: {fileID: 11400032}
   - 114: {fileID: 11400012}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
   m_Layer: 0
-  m_Name: cockroach container
+  m_Name: Cockroach-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +139,7 @@ GameObject:
   - 4: {fileID: 400014}
   - 114: {fileID: 11400014}
   m_Layer: 0
-  m_Name: mouse animation
+  m_Name: rabbit animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +173,7 @@ GameObject:
   - 114: {fileID: 11400022}
   - 114: {fileID: 11400020}
   m_Layer: 0
-  m_Name: rabbit container
+  m_Name: cockroach container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +189,7 @@ GameObject:
   - 4: {fileID: 400020}
   - 114: {fileID: 11400024}
   m_Layer: 0
-  m_Name: rabbit animation
+  m_Name: Cockroach animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +222,7 @@ GameObject:
   - 114: {fileID: 11400028}
   - 114: {fileID: 11400030}
   m_Layer: 0
-  m_Name: mouse container
+  m_Name: rabbit container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,8 +237,42 @@ GameObject:
   m_Component:
   - 4: {fileID: 400026}
   - 114: {fileID: 11400034}
+  - 114: {fileID: 11400032}
   m_Layer: 0
-  m_Name: Cockroach animation
+  m_Name: city tileset container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100028
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400028}
+  - 114: {fileID: 11400038}
+  - 114: {fileID: 11400036}
+  m_Layer: 0
+  m_Name: mouse container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100030
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400030}
+  - 114: {fileID: 11400040}
+  m_Layer: 0
+  m_Name: mouse animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,11 +320,12 @@ Transform:
   m_LocalPosition: {x: 21.1866798, y: 14.8388662, z: -14.9551516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400012}
+  - {fileID: 400026}
+  - {fileID: 400018}
   - {fileID: 400010}
   - {fileID: 400016}
+  - {fileID: 400028}
   - {fileID: 400024}
-  - {fileID: 400018}
   m_Father: {fileID: 400000}
 --- !u!1002 &400005
 EditorExtensionImpl:
@@ -304,10 +340,10 @@ Transform:
   m_LocalPosition: {x: -276.670624, y: 15.0754004, z: 17.6875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400026}
-  - {fileID: 400022}
-  - {fileID: 400014}
   - {fileID: 400020}
+  - {fileID: 400022}
+  - {fileID: 400030}
+  - {fileID: 400014}
   m_Father: {fileID: 400000}
 --- !u!1002 &400007
 EditorExtensionImpl:
@@ -321,7 +357,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.6408615, y: 17.5345421, z: 1.8125}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 400012}
   m_Father: {fileID: 400000}
 --- !u!1002 &400009
 EditorExtensionImpl:
@@ -343,11 +380,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 40, y: .00499999989, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400004}
+  m_Father: {fileID: 400008}
 --- !u!4 &400014
 Transform:
   m_ObjectHideFlags: 1
@@ -421,10 +458,57 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+--- !u!4 &400028
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+--- !u!4 &400030
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 292.746155, y: -110.119194, z: -39.5583496}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Mesh: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,7 +755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 4900000, guid: ddde2036fa338f94196846483fe9b8f2, type: 3}
+  - {fileID: 4900000, guid: c38e783afc3e3c44987073e191c7744a, type: 3}
+  - {fileID: 4900000, guid: fa224ad2876d239479ee8204a5f1cd17, type: 3}
+  - {fileID: 4900000, guid: a999dffc2a2c8a14e961821f8c9f5517, type: 3}
   zoneFolder: zone1/
   lvl: {fileID: 0}
 --- !u!114 &11400012
@@ -682,9 +768,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 100012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0774980171c514ea93208b47048a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Cockroach-2
+  _position: {x: 40, y: 9}
+  _size: {x: 1, y: 1}
+  _rotation: 0
+  _pivot: 4
+  _pivotPoint: {x: 0, y: 0}
+  _registerInput: 0
+  _depth: 0
+  _collidable: 0
+  _physics: 0
+  _colliderType: 0
+  _collisionDepth: 0
+  _collisionSize: .400000006
+  draggable: 0
+  dragButton: 0
+  init: 0
+  _worldBounds:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  protoType: 
+  baseName: Cockroach-2
+  oSize: {x: 1.06666672, y: 1.06666672}
+  imageSize: {x: 0, y: 0}
+  _offset: {x: 0, y: 0}
+  _baseOffset: {x: 0, y: 0}
+  _flipHorizontal: 0
+  _flipVertical: 0
+  _transparent: 1
+  _additive: 0
+  _materialReference: transparent
+  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  _alpha: 1
+  _image: {fileID: 0}
+  sizeImages: []
+  _frameIndex: 0
+  _frameName: frame0
+  _spriteContainer: {fileID: 11400022}
+  _containerName: cockroach container
+  _newSprite: 0
+  _animation: {fileID: 11400024}
+  _animationFrameset: 
+  _speed: 1
+  _looping: 1
+  _numberOfPlays: -1
+  _playOnStart: 1
+  _startAtRandomFrame: 0
+  _destroyWhenFinished: 0
+  animationPreview: 0
+  _animationName: Cockroach animation
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -696,9 +834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: mouse animation
+  _name: rabbit animation
   _fps: 8.88888931
-  _duration: .899999976
+  _duration: 1.79999995
   framesets:
   - name: down
     container: {fileID: 11400028}
@@ -711,7 +849,7 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 0
-    _containerName: mouse container
+    _containerName: rabbit container
   - name: up
     container: {fileID: 11400028}
     startFrame: 2
@@ -723,7 +861,7 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 2
-    _containerName: mouse container
+    _containerName: rabbit container
   - name: left
     container: {fileID: 11400028}
     startFrame: 4
@@ -735,7 +873,7 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 4
-    _containerName: mouse container
+    _containerName: rabbit container
   - name: right
     container: {fileID: 11400028}
     startFrame: 6
@@ -747,7 +885,55 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 6
-    _containerName: mouse container
+    _containerName: rabbit container
+  - name: down_angry
+    container: {fileID: 11400028}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 8
+    _containerName: rabbit container
+  - name: up_angry
+    container: {fileID: 11400028}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 10
+    _containerName: rabbit container
+  - name: left_angry
+    container: {fileID: 11400028}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 12
+    _containerName: rabbit container
+  - name: right_angry
+    container: {fileID: 11400028}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 14
+    _containerName: rabbit container
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -799,12 +985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: rabbit container
+  _name: cockroach container
   _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 5f918b39b2f65aa41a89638a7beaa1ba, type: 3}
+  texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
   sizeTextures: []
   generateSprites: 0
-  _framesXY: {x: 8, y: 2}
+  _framesXY: {x: 5, y: 1}
   _frameSize: {x: 8, y: 8}
 --- !u!114 &11400024
 MonoBehaviour:
@@ -817,14 +1003,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: rabbit animation
+  _name: Cockroach animation
   _fps: 10
-  _duration: 1.60000002
+  _duration: .5
   framesets:
-  - name: 
+  - name: down
     container: {fileID: 11400022}
     startFrame: 0
-    endFrame: 1
+    endFrame: 4
     frameNames: []
     frameNameMask: 
     sortFrameNames: 0
@@ -832,91 +1018,7 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 0
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 2
-    endFrame: 3
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 2
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 4
-    endFrame: 5
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 4
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 6
-    endFrame: 7
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 6
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 8
-    endFrame: 9
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 8
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 10
-    endFrame: 11
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 10
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 12
-    endFrame: 13
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 12
-    _containerName: rabbit container
-  - name: 
-    container: {fileID: 11400022}
-    startFrame: 14
-    endFrame: 15
-    frameNames: []
-    frameNameMask: 
-    sortFrameNames: 0
-    playCount: 1
-    pingPong: 0
-    singleDuration: 0
-    startIndex: 14
-    _containerName: rabbit container
+    _containerName: cockroach container
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -991,13 +1093,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: mouse container
+  _name: rabbit container
   _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
+  texture: {fileID: 2800000, guid: 5f918b39b2f65aa41a89638a7beaa1ba, type: 3}
   sizeTextures: []
   generateSprites: 0
   _framesXY: {x: 8, y: 2}
-  _frameSize: {x: 16, y: 16}
+  _frameSize: {x: 8, y: 8}
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1014,19 +1116,12 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100012}
+  m_GameObject: {fileID: 100026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: cockroach container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 372d4ead7d74aaf46a2cfc02fafb9d8b, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 5, y: 1}
-  _frameSize: {x: 8, y: 8}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1035,17 +1130,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 100026}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: city tileset container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 7002a5ec7c4ffbf4c9f9a61e8539298f, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 10, y: 10}
+  _frameSize: {x: 16, y: 16}
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: mouse container
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 01b11f3e5b8c5cb41949dc9d8dcbcbdc, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 8, y: 2}
+  _frameSize: {x: 16, y: 16}
+--- !u!114 &11400040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cf791b8ec508eb4a94c7295007afe68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Cockroach animation
-  _fps: 10
-  _duration: .5
+  _name: mouse animation
+  _fps: 8.88888931
+  _duration: .899999976
   framesets:
-  - name: 
-    container: {fileID: 11400032}
+  - name: down
+    container: {fileID: 11400038}
     startFrame: 0
-    endFrame: 4
+    endFrame: 1
     frameNames: []
     frameNameMask: 
     sortFrameNames: 0
@@ -1053,7 +1195,43 @@ MonoBehaviour:
     pingPong: 0
     singleDuration: 0
     startIndex: 0
-    _containerName: cockroach container
+    _containerName: mouse container
+  - name: up
+    container: {fileID: 11400038}
+    startFrame: 2
+    endFrame: 3
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 2
+    _containerName: mouse container
+  - name: left
+    container: {fileID: 11400038}
+    startFrame: 4
+    endFrame: 5
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 4
+    _containerName: mouse container
+  - name: right
+    container: {fileID: 11400038}
+    startFrame: 6
+    endFrame: 7
+    frameNames: []
+    frameNameMask: 
+    sortFrameNames: 0
+    playCount: 1
+    pingPong: 0
+    singleDuration: 0
+    startIndex: 6
+    _containerName: mouse container
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
