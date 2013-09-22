@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pathfinding;
 
 public class LevelObjective : MonoBehaviour
 {
@@ -75,6 +76,11 @@ public class LevelObjective : MonoBehaviour
 			newLevel.transform.position = Vector3.MoveTowards (newLevel.transform.position, Vector3.zero, speed * Time.deltaTime);
 			yield return 1;
 		}
+		
+		foreach (Progress progress in AstarPath.active.ScanLoop ()) {
+				Debug.Log ("Rescanning paths");
+		}
+		
 		GameObject.Destroy (oldLevel);
 	}
 	

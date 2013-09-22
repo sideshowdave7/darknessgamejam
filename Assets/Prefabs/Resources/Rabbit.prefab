@@ -20,7 +20,7 @@ GameObject:
   - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Rabbit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -5.58918428, y: .00105891842, z: .5}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -162,7 +162,7 @@ MonoBehaviour:
   behavior: 0
   damage: 0
   countDown: 0
-  ignoreThis: 0
+  navPoints: []
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,14 +224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0774980171c514ea93208b47048a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Mouse
+  _name: Rabbit
   _position: {x: -5.58918428, y: .5}
-  _size: {x: 2, y: 2}
+  _size: {x: 1, y: 1}
   _rotation: 0
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
   _registerInput: 0
-  _depth: 0
+  _depth: -1
   _collidable: 1
   _physics: 5
   _colliderType: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
     height: 0
   protoType: 
   baseName: Mouse
-  oSize: {x: 2.13333344, y: 2.13333344}
+  oSize: {x: 1.06666672, y: 1.06666672}
   imageSize: {x: 0, y: 0}
   _offset: {x: 0, y: 0}
   _baseOffset: {x: 0, y: 0}
@@ -264,7 +264,7 @@ MonoBehaviour:
   _frameIndex: 0
   _frameName: frame0
   _spriteContainer: {fileID: 0}
-  _containerName: mouse container
+  _containerName: rabbit container
   _newSprite: 0
   _animation: {fileID: 0}
   _animationFrameset: down
@@ -275,7 +275,7 @@ MonoBehaviour:
   _startAtRandomFrame: 0
   _destroyWhenFinished: 0
   animationPreview: 0
-  _animationName: mouse animation
+  _animationName: rabbit animation
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

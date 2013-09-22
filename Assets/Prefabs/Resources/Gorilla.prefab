@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Gorilla
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   _pivot: 4
   _pivotPoint: {x: 0, y: 0}
   _registerInput: 0
-  _depth: 0
+  _depth: -1
   _collidable: 1
   _physics: 5
   _colliderType: 0

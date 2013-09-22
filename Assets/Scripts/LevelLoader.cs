@@ -26,13 +26,14 @@ public class LevelLoader : MonoBehaviour
 	
 	private GameObject LoadLevel (int index, Vector3 pos)
 	{
-		levelIndex = Mathf.Clamp(index, 0, levels.Length -1);
+		levelIndex = Mathf.Clamp (index, 0, levels.Length - 1);
 		var level = new OgmoLevel (levels [levelIndex]);
 		lvl = new GameObject ("TheLevelStuff");
 		lvl.transform.position = pos;
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
 		}
+
 		return lvl;
 	}
 	
@@ -43,6 +44,7 @@ public class LevelLoader : MonoBehaviour
 	
 	public GameObject ReloadLevel ()
 	{
+		GameObject.Destroy (lvl);
 		return LoadLevel (levelIndex, Vector3.zero);
 	}
 	
@@ -78,10 +80,9 @@ public class LevelLoader : MonoBehaviour
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
 			OTObject ot = go.GetComponent<OTObject> ();
+			go.transform.localPosition = new Vector3 (tile.x, height, 15 - tile.y);
 			if (ot != null)
-				ot.position = new Vector2 (tile.x, 15 - tile.y);
-			else
-				go.transform.localPosition = new Vector3 (tile.x, height, -tile.y);
+				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
 		}
 	}
 	
@@ -94,7 +95,7 @@ public class LevelLoader : MonoBehaviour
 			OTObject ot = go.GetComponent<OTObject> ();
 			go.transform.localPosition = new Vector3 (((float)entity.x) / 16f, 0.25f, 15f - ((float)entity.y) / 16f);
 			if (ot != null)
-				ot.position = new Vector2 (go.transform.position.x, go.transform.position.z);
+				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
 		}
 	}
 	
