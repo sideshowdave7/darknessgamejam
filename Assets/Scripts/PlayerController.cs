@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	public float move_speed;
-	public PlayerPowerEnum currentPower = PlayerPowerEnum.Normal;
+	public PlayerPowerEnum currentPower = PlayerPowerEnum.Visual;
 	private bool prevTogglePower;
 	public Flash flash;
 	
