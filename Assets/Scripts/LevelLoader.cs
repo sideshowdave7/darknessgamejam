@@ -87,16 +87,16 @@ public class LevelLoader : MonoBehaviour
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
 			OTObject ot = go.GetComponent<OTObject> ();
-			go.transform.position = new Vector3 (entity.x * 0.0625f, 0.25f, -entity.y * 0.0625f);
+			go.transform.position = new Vector3 (((float)entity.x) / 16f, 0.25f, 15f - ((float)entity.y) / 16f);
 			if (ot != null)
-				ot.position = new Vector2 (entity.x * 0.0625f, entity.y * 0.0625f);
+				ot.position = new Vector2 (((float)entity.x) / 16f, 15f - ((float)entity.y) / 16f);
 		}
 	}
 	
 	private GameObject GetPrefab (string path)
 	{
-		GameObject go;
-		go = (GameObject)Resources.Load (path);
-		return go;
+		UnityEngine.Object go;
+		go = Resources.Load (path);
+		return (go as GameObject);
 	}
 }
