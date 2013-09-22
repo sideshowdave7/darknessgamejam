@@ -486,7 +486,7 @@ Transform:
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400020
@@ -497,7 +497,7 @@ Transform:
   m_GameObject: {fileID: 100020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 292.746155, y: -110.119194, z: -39.5583496}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
 --- !u!4 &400022
@@ -1112,8 +1112,8 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: 025f75b167144e64e820c8952c199ce1, type: 3}
   sizeTextures: []
   generateSprites: 0
-  _framesXY: {x: 8, y: 3}
-  _frameSize: {x: 16, y: 16}
+  _framesXY: {x: 9, y: 3}
+  _frameSize: {x: 1, y: 2}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
