@@ -23,7 +23,9 @@ public class AnimationStateController : MonoBehaviour {
 			dir = lmc.dir;
 		}
 		
-		if (dir == Vector3.right){
+		if (dir == Vector3.zero){
+			animSprite.animationFrameset = "idle";
+		} else if (dir == Vector3.right){
 			animSprite.animationFrameset = "right";
 		} else if (dir == Vector3.left){
 			animSprite.animationFrameset = "left";
@@ -32,6 +34,5 @@ public class AnimationStateController : MonoBehaviour {
 		} else if (dir == Vector3.back){
 			animSprite.animationFrameset = "back";
 		} 
-		
 	}
 }
