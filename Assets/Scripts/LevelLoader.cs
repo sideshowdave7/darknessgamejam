@@ -33,6 +33,10 @@ public class LevelLoader : MonoBehaviour
 		foreach (var layer in level.layers.Values) {
 			LoadLayer (layer);
 		}
+		var astar = GameObject.FindGameObjectWithTag("Astar");
+		if (astar != null){
+			astar.GetComponent<AstarPath>().Scan();	
+		}
 		return lvl;
 	}
 	
@@ -82,6 +86,7 @@ public class LevelLoader : MonoBehaviour
 				ot.position = new Vector2 (tile.x, 15 - tile.y);
 			else
 				go.transform.localPosition = new Vector3 (tile.x, height, -tile.y);
+			
 		}
 	}
 	
