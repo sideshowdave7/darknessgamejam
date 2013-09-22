@@ -148,8 +148,7 @@ public class AIPath : MonoBehaviour {
 		
 		if( currentNav >= navPoints.Length )
 			currentNav = 0;
-		
-		Debug.Log ( currentNav );
+
 		
 		bool test = ( transform.position - navPoints[currentNav].transform.position ).magnitude <= endReachedDistance;
 		
