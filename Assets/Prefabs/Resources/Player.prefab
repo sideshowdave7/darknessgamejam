@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 10
-  currentPower: 0
+  currentPower: 1
   flash: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
