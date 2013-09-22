@@ -15,6 +15,6 @@ public class VisibleToggleSpritesThingy : MonoBehaviour
 		}else if(!visible && sprite.frameIndex >= visibleOffset){
 			sprite.frameIndex -= visibleOffset;
 		}*/
-		sprite.visible = !visible;
+		//sprite.visible = !visible;
 	}
 }
