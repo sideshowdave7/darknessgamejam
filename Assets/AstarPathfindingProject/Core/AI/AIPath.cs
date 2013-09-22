@@ -385,7 +385,7 @@ public class AIPath : MonoBehaviour {
 		
 		
 		dir = targetPosition-currentPosition;
-		dir.z = 0;
+		dir.y = 0;
 		float targetDist = dir.magnitude;
 		
 		float slowdown = Mathf.Clamp01 (targetDist / slowdownDistance);
@@ -400,8 +400,6 @@ public class AIPath : MonoBehaviour {
 			return Vector3.zero;
 		}
 		
-		// Vector3 forward = tr.forward;
-		
 		Vector3 forward = dir;
 		
 		float dot = Vector3.Dot (dir.normalized,forward);
@@ -411,7 +409,7 @@ public class AIPath : MonoBehaviour {
 		if (Time.deltaTime	> 0) {
 			sp = Mathf.Clamp (sp,0,targetDist/(Time.deltaTime*2));
 		}
-		return forward*sp;
+		return forward * sp;
 	}
 	
 	/** Rotates in the specified direction.
@@ -419,16 +417,16 @@ public class AIPath : MonoBehaviour {
 	 * \see turningSpeed
 	 */
 	protected virtual void RotateTowards (Vector3 dir) {
-		// Quaternion rot = tr.rotation;
-		// Quaternion toTarget = Quaternion.LookRotation (dir);
-		
-		// rot = Quaternion.Slerp (rot,toTarget,turningSpeed*Time.fixedDeltaTime);
-		// Vector3 euler = rot.eulerAngles;
-		// euler.z = 0;
-		// euler.x = 0;
-		// rot = Quaternion.Euler (euler);
-		
-		// tr.rotation = rot;
+	//	Quaternion rot = tr.rotation;
+	//	Quaternion toTarget = Quaternion.LookRotation (dir);
+	//	
+	//	rot = Quaternion.Slerp (rot,toTarget,turningSpeed*Time.fixedDeltaTime);
+	//	Vector3 euler = rot.eulerAngles;
+	//	euler.z = 0;
+	//	euler.x = 0;
+	//	rot = Quaternion.Euler (euler);
+	//	
+	//	tr.rotation = rot;
 	}
 	
 	/** Calculates target point from the current line segment.
@@ -440,8 +438,8 @@ public class AIPath : MonoBehaviour {
 	 * \todo This function uses .magnitude quite a lot, can it be optimized?
 	 */
 	protected Vector3 CalculateTargetPoint (Vector3 p, Vector3 a, Vector3 b) {
-		 //a.z = p.z;
-		 //b.y = p.y;
+		 a.y = p.y;
+		b.y = p.y;
 		
 		float magn = (a-b).magnitude;
 		if (magn == 0) return a;
