@@ -13,7 +13,7 @@ public class OgmoEntity
 	public List<Vector2> nodes;
 	public Dictionary<string, string> entityAttributes;
 
-	public OgmoEntity (XmlNode node)
+	public OgmoEntity (XmlElement node)
 	{
 		XmlAttributeCollection attributes = node.Attributes;
 		name = node.Name;
@@ -24,16 +24,16 @@ public class OgmoEntity
 			XmlNode attribute = attributes [ii];
 			switch (attribute.Name) {
 			case "x":
-				x = System.Convert.ToInt32 (attribute.Value);
+				x = int.Parse (attribute.Value);
 				break;
 			case "y":
-				y = System.Convert.ToInt32 (attribute.Value);
+				y = int.Parse (attribute.Value);
 				break;
 			case "width":
-				width = System.Convert.ToSingle (attribute.Value);
+				width = float.Parse (attribute.Value);
 				break;
 			case "height":
-				height = System.Convert.ToSingle (attribute.Value);
+				height = float.Parse (attribute.Value);
 				break;
 			default:
 				entityAttributes [attribute.Name] = attribute.Value;
@@ -44,9 +44,21 @@ public class OgmoEntity
 		for (int ii=0; ii < node.ChildNodes.Count; ii++) {
 			XmlNode childNode = node.ChildNodes [ii];
 			attributes = childNode.Attributes;
-			Vector2 nodePosition = new Vector2 (System.Convert.ToSingle (attributes.GetNamedItem ("x").Value),
-            System.Convert.ToSingle (attributes.GetNamedItem ("y").Value));
-			nodes.Add (nodePosition);
+			Vector2 nodePosition;
+			if (Parse (childNode, out nodePosition))
+				nodes.Add (nodePosition);
 		}
+	}
+	
+	bool Parse (XmlNode childNode, out Vector2 value)
+	{
+		bool retval = false;
+		if (childNode.Attributes ["x"] != null && childNode.Attributes ["y"] != null) {
+			value = new Vector2 (float.Parse (childNode.Attributes ["x"].Value),
+            	float.Parse (childNode.Attributes ["y"].Value));
+			retval = true;
+		} else
+			value = Vector2.zero;
+		return retval;
 	}
 }
