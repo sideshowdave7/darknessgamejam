@@ -370,7 +370,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 8, y: 1000, z: 8}
+  m_LocalPosition: {x: 9.5, y: 1000, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOverride: {fileID: 0}
   _zoom: 1
-  _position: {x: 8, y: 8}
+  _position: {x: 9.5, y: 8}
   _rotation: 0
   _movementTarget: {fileID: 0}
   _rotationTarget: {fileID: 0}
