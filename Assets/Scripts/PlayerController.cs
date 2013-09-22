@@ -65,7 +65,11 @@ public class PlayerController : MonoBehaviour
 			}		
 			foreach (var enemy in enemies) {
 				enemy.GetComponent<SFXVolumeControl> ().sfxMultiplier = 1.2f;
-				enemy.GetComponent<AIPath> ().speed *= 3;
+				var aipath = enemy.GetComponent<AIPath> ();
+				if (aipath != null){	aipath.speed *= 3; }
+				var lmc = enemy.GetComponent<LargeMovementControl>();
+				if (lmc != null) {  	lmc.speed *= 3; }
+				
 			}
 			break;
 		case PlayerPowerEnum.Visual:
@@ -93,7 +97,10 @@ public class PlayerController : MonoBehaviour
 			}
 			foreach (var enemy in enemies) {
 				enemy.GetComponent<SFXVolumeControl> ().sfxMultiplier = 2.5f;
-				enemy.GetComponent<AIPath> ().speed *= 1 / 3f;
+				var aipath = enemy.GetComponent<AIPath> ();
+				if (aipath != null){	aipath.speed /= 3; }
+				var lmc = enemy.GetComponent<LargeMovementControl>();
+				if (lmc != null) {  	lmc.speed /= 3; }
 			}
 			break;
 		case PlayerPowerEnum.Visual:
