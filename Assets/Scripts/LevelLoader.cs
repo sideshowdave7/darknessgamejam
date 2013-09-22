@@ -145,7 +145,7 @@ public class LevelLoader : MonoBehaviour
 			Vector3 pos = new Vector3 (((float)entity.x) / 16f, 0.25f, 15f - ((float)entity.y) / 16f);
 			var size = GetEntitySize (entity.name) * 0.5f;
 			pos.x += size.x * 0.5f;
-			pos.z -= size.z * 0.5f;
+			pos.z -= size.y * 0.5f;
 			go.transform.localPosition = pos;
 			if (ot != null)
 				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
