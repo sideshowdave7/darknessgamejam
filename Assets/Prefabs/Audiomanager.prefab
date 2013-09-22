@@ -44,9 +44,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 18c87387e6eeedd4696ae7e75da6853e, type: 3}
   - {fileID: 8300000, guid: 71452576c95a29d48b5d3b12b5f54792, type: 3}
   _allLayers: []
-  _muteLayers:
-  - Darkness-bass1
-  - Darkness-melody
+  _muteLayers: []
   sfxVolume: .5
 --- !u!1001 &100100000
 Prefab:
