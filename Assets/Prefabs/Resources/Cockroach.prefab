@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e704021dc1ab7a47b2272fa010b6b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxMultiplier: 2.5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,13 +157,15 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   viewDistance: 2000
+  countDown: 0
   aware: 0
   health: 0
   speed: 0
   behavior: 0
   damage: 0
-  countDown: 0
-  navPoints: []
+  justPatrol: 0
+  navPoints:
+  - {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,7 +181,7 @@ MonoBehaviour:
   target: {fileID: 0}
   canSearch: 1
   canMove: 1
-  speed: 3
+  speed: 5
   turningSpeed: 5
   slowdownDistance: .200000003
   pickNextWaypointDist: 2

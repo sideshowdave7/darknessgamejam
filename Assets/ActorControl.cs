@@ -10,9 +10,13 @@ public class ActorControl : MonoBehaviour {
 		float viewDistance = 0, countDown;
 	public
 		int aware, health, speed, behavior, damage; 
+	
+	public bool justPatrol = false;
 		
 	public
 		GameObject[] navPoints;
+	
+	private GameObject[] globalNavPoints;
 	
 	protected
 		GameObject[] tempNavPoints;
@@ -25,6 +29,13 @@ public class ActorControl : MonoBehaviour {
 	 void Start(){	
 	 	this.position = transform.position;
 		Player = GameObject.FindGameObjectWithTag( "Player" );
+		
+		globalNavPoints = new GameObject[navPoints.Length];
+		
+		for (int i = 0; i < navPoints.Length; i++){
+				globalNavPoints[i] = new GameObject("navPoint"+i.ToString());
+				globalNavPoints[i].transform.position += transform.position + navPoints[i].transform.localPosition;
+		}
 	}
 
 	void detect(){
@@ -48,18 +59,19 @@ public class ActorControl : MonoBehaviour {
 	}
 
 	void move(){
-		switch( behavior )
-		{
-		case 0:
-			
+		if (behavior == 0 && !justPatrol){
 			gameObject.SendMessage( "AIPathCall", navPoints , SendMessageOptions.DontRequireReceiver );
-				break;
-		case 1:
+		} else if (justPatrol) {
+			gameObject.SendMessage( "AIPathCall", globalNavPoints , SendMessageOptions.DontRequireReceiver );
+		}
+		else if (behavior == 1){
+		
 			tempNavPoints = new GameObject[1];
 			tempNavPoints[0] = Player;
-			gameObject.SendMessage( "AIPathCall", tempNavPoints , SendMessageOptions.DontRequireReceiver );
-				break;
-		}	
+			if (!justPatrol){
+				gameObject.SendMessage( "AIPathCall", tempNavPoints , SendMessageOptions.DontRequireReceiver );
+			}
+		}
 	}
 	
 	void attack(){
