@@ -225,8 +225,10 @@ public class AIPath : MonoBehaviour {
 	/** Requests a path to the target */
 	public virtual void SearchPath () {
 		
-		if (target == null) { Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
-		
+		if (target == null) //{ Debug.LogError ("Target is null, aborting all search"); canSearch = false; return; }
+			target = GameObject.FindGameObjectWithTag( "Player" ).transform;
+		if (target == null)
+			return;
 		lastRepath = Time.time;
 		//This is where we should search to
 		Vector3 targetPosition = target.position;
@@ -302,7 +304,7 @@ public class AIPath : MonoBehaviour {
 		return tr.position;
 	}
 	
-	public virtual void Update () {
+	public virtual void AIPathCall () {
 		
 		if (!canMove) { return; }
 		
@@ -385,7 +387,7 @@ public class AIPath : MonoBehaviour {
 		
 		
 		dir = targetPosition-currentPosition;
-		dir.z = 0;
+		dir.y = 0;
 		float targetDist = dir.magnitude;
 		
 		float slowdown = Mathf.Clamp01 (targetDist / slowdownDistance);
@@ -400,18 +402,24 @@ public class AIPath : MonoBehaviour {
 			return Vector3.zero;
 		}
 		
-		// Vector3 forward = tr.forward;
-		
-		Vector3 forward = dir;
-		
-		float dot = Vector3.Dot (dir.normalized,forward);
-		float sp = speed * Mathf.Max (dot,minMoveScale) * slowdown;
+		//Vector3 forward = dir;
+		//float dot = Vector3.Dot (dir.normalized,forward);
+		//float sp = speed * Mathf.Max (dot,minMoveScale) * slowdown;
 		
 		
-		if (Time.deltaTime	> 0) {
-			sp = Mathf.Clamp (sp,0,targetDist/(Time.deltaTime*2));
-		}
-		return forward*sp;
+		//if (Time.deltaTime	> 0) {
+		//	sp = Mathf.Clamp (sp,0,targetDist/(Time.deltaTime*2));
+		//}
+		
+
+		
+		//return targetPosition.Normalized*sp;
+		
+		float vOutMag = dir.magnitude;
+		
+		Vector3 vOut = dir * ( 1 / vOutMag );
+		
+		return vOut * speed;
 	}
 	
 	/** Rotates in the specified direction.
@@ -419,16 +427,16 @@ public class AIPath : MonoBehaviour {
 	 * \see turningSpeed
 	 */
 	protected virtual void RotateTowards (Vector3 dir) {
-		// Quaternion rot = tr.rotation;
-		// Quaternion toTarget = Quaternion.LookRotation (dir);
+		//Quaternion rot = tr.rotation;
+		//Quaternion toTarget = Quaternion.LookRotation (dir);
 		
-		// rot = Quaternion.Slerp (rot,toTarget,turningSpeed*Time.fixedDeltaTime);
-		// Vector3 euler = rot.eulerAngles;
-		// euler.z = 0;
-		// euler.x = 0;
-		// rot = Quaternion.Euler (euler);
+		//rot = Quaternion.Slerp (rot,toTarget,turningSpeed*Time.fixedDeltaTime);
+		//Vector3 euler = rot.eulerAngles;
+		//euler.z = 0;
+		//euler.x = 0;
+		//rot = Quaternion.Euler (euler);
 		
-		// tr.rotation = rot;
+		//tr.rotation = rot;
 	}
 	
 	/** Calculates target point from the current line segment.
@@ -440,8 +448,8 @@ public class AIPath : MonoBehaviour {
 	 * \todo This function uses .magnitude quite a lot, can it be optimized?
 	 */
 	protected Vector3 CalculateTargetPoint (Vector3 p, Vector3 a, Vector3 b) {
-		 //a.z = p.z;
-		 //b.y = p.y;
+		a.y = p.y;
+		b.y = p.y;
 		
 		float magn = (a-b).magnitude;
 		if (magn == 0) return a;
