@@ -4,6 +4,7 @@ using System.Linq;
 
 public class LevelLoader : MonoBehaviour
 {	
+	public OTContainer[] containers;
 	private int levelIndex = 0;
 	public TextAsset[] levels;
 	public string zoneFolder;
@@ -51,6 +52,14 @@ public class LevelLoader : MonoBehaviour
 	private void LoadLayer (OgmoLayer layer)
 	{
 		if (layer.tiles != null) {
+			OTContainer container = containers [0];
+			if (!string.IsNullOrEmpty (layer.tileSet)) {
+				foreach (var c in containers) {
+					if (c != null && 
+						string.Equals (c.name, layer.tileSet, System.StringComparison.InvariantCultureIgnoreCase))
+						container = c;
+				}
+			}
 			float height = 0f;
 			switch (layer.name) {
 			case "Foreground":
@@ -61,7 +70,7 @@ public class LevelLoader : MonoBehaviour
 				break;
 			}
 			foreach (var tile in layer.tiles) {
-				LoadTile (tile, height);
+				LoadTile (tile, container, height);
 			}
 		}
 		if (layer.entities != null) {
@@ -71,7 +80,7 @@ public class LevelLoader : MonoBehaviour
 		}
 	}
 	
-	private void LoadTile (OgmoTile tile, float height)
+	private void LoadTile (OgmoTile tile, OTContainer container, float height)
 	{
 		string tileName = string.Format ("frame{0}", tile.id);
 		string tilePath = (zoneFolder ?? "") + tileName;
@@ -79,10 +88,17 @@ public class LevelLoader : MonoBehaviour
 		if (go != null) {
 			go = (GameObject)GameObject.Instantiate (go);
 			go.transform.parent = lvl.transform;
-			OTObject ot = go.GetComponent<OTObject> ();
+			OTSprite ot = go.GetComponent<OTSprite> ();
+			
 			go.transform.localPosition = new Vector3 (tile.x, height, 15 - tile.y);
-			if (ot != null)
+			if (ot != null) {
 				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
+				int id = ot.frameIndex;
+				ot.spriteContainer = container;
+				ot.frameIndex = id;
+				ot.otTransform = ot.transform;
+				ot.transform.localScale = Vector3.one;
+			}
 		}
 	}
 	

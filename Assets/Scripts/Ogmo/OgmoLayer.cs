@@ -13,6 +13,7 @@ public enum LayerType
 public class OgmoLayer
 {
 	public string name;
+	public string tileSet;
 	public int tileWidth;
 	public int tileHeight;
 	public List<OgmoEntity> entities;
@@ -25,6 +26,7 @@ public class OgmoLayer
 		name = layerNode.Name;
 		if (layerNode.Attributes.GetNamedItem ("tileset") != null) {
 			type = LayerType.TILES;
+			tileSet = layerNode.Attributes ["tileset"].Value;
 		} else if (layerNode.Attributes.GetNamedItem ("exportMode") != null) {
 			type = LayerType.GRID;
 		}

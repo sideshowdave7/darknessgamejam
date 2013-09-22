@@ -239,7 +239,7 @@ GameObject:
   - 114: {fileID: 11400034}
   - 114: {fileID: 11400032}
   m_Layer: 0
-  m_Name: research sepia tileset container
+  m_Name: research
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,10 +286,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400032}
-  - 114: {fileID: 11400042}
   - 114: {fileID: 11400044}
+  - 114: {fileID: 11400042}
   m_Layer: 0
-  m_Name: moutain sepia tileset container
+  m_Name: city
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,112 +303,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400034}
-  - 114: {fileID: 11400048}
   - 114: {fileID: 11400046}
+  - 114: {fileID: 11400048}
   m_Layer: 0
-  m_Name: city sepia tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100036
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400036}
-  - 114: {fileID: 11400052}
-  - 114: {fileID: 11400050}
-  m_Layer: 0
-  m_Name: research mono tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100038
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400038}
-  - 114: {fileID: 11400054}
-  - 114: {fileID: 11400056}
-  m_Layer: 0
-  m_Name: research tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100040
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400040}
-  - 114: {fileID: 11400060}
-  - 114: {fileID: 11400058}
-  m_Layer: 0
-  m_Name: moutain mono tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100042
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400042}
-  - 114: {fileID: 11400062}
-  - 114: {fileID: 11400064}
-  m_Layer: 0
-  m_Name: moutain tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100044
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400044}
-  - 114: {fileID: 11400066}
-  - 114: {fileID: 11400068}
-  m_Layer: 0
-  m_Name: city mono tileset container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &100046
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400046}
-  - 114: {fileID: 11400072}
-  - 114: {fileID: 11400070}
-  m_Layer: 0
-  m_Name: city tileset container
+  m_Name: mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +337,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 10, y: 1000, z: 7.5}
+  m_LocalPosition: {x: 8, y: 1000, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -456,20 +354,14 @@ Transform:
   m_LocalPosition: {x: 21.1866798, y: 14.8388662, z: -14.9551516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400044}
-  - {fileID: 400034}
-  - {fileID: 400046}
+  - {fileID: 400032}
   - {fileID: 400018}
   - {fileID: 400010}
   - {fileID: 400016}
+  - {fileID: 400034}
   - {fileID: 400028}
-  - {fileID: 400040}
-  - {fileID: 400032}
-  - {fileID: 400042}
   - {fileID: 400024}
-  - {fileID: 400036}
   - {fileID: 400026}
-  - {fileID: 400038}
   m_Father: {fileID: 400000}
 --- !u!1002 &400005
 EditorExtensionImpl:
@@ -650,72 +542,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
---- !u!4 &400036
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
---- !u!4 &400038
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
---- !u!4 &400040
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100040}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
---- !u!4 &400042
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
---- !u!4 &400044
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
---- !u!4 &400046
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11114883, y: -109.88266, z: -6.91569805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 400004}
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -820,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOverride: {fileID: 0}
   _zoom: 1
-  _position: {x: 10, y: 7.5}
+  _position: {x: 8, y: 8}
   _rotation: 0
   _movementTarget: {fileID: 0}
   _rotationTarget: {fileID: 0}
@@ -986,6 +812,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992afb4f487a16e459c46d9db2709559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  containers:
+  - {fileID: 11400044}
+  - {fileID: 11400046}
+  - {fileID: 11400034}
   levels:
   - {fileID: 4900000, guid: c38e783afc3e3c44987073e191c7744a, type: 3}
   - {fileID: 4900000, guid: fa224ad2876d239479ee8204a5f1cd17, type: 3}
@@ -1365,9 +1195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: research sepia tileset container
+  _name: research
   _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: d9a26868e5ffb304c9dd25fa42530fb2, type: 3}
+  texture: {fileID: 2800000, guid: 979725a4c46046f41b73816b1f4e3d0c, type: 3}
   sizeTextures: []
   generateSprites: 0
   _framesXY: {x: 10, y: 10}
@@ -1472,16 +1302,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: moutain sepia tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 8eb53b9ef144e924d8d3988fbab05671, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1490,9 +1313,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: city
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 10767774cdfd55e46986617955970d12, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 10, y: 10}
+  _frameSize: {x: 16, y: 16}
 --- !u!114 &11400046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1501,9 +1331,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
+  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: mountain
+  _sheetSize: {x: 0, y: 0}
+  texture: {fileID: 2800000, guid: 1148bda13df2f1149abbb972fbd910d4, type: 3}
+  sizeTextures: []
+  generateSprites: 0
+  _framesXY: {x: 10, y: 10}
+  _frameSize: {x: 16, y: 16}
 --- !u!114 &11400048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1512,190 +1349,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: city sepia tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 61fa2ad09580c084f810726a4219d26c, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: research mono tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 028e3bf55345eda47bdd21e35ae2c55b, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: research tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 979725a4c46046f41b73816b1f4e3d0c, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400060
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: moutain mono tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 7d88023d173877b4d9a989007ac2ad5f, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: moutain tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 1148bda13df2f1149abbb972fbd910d4, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: city mono tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 633b34ad10993c040b45fcfe487b13ea, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
---- !u!114 &11400068
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e997a10960387146b3b3f6f40de9181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc190f792e38f049ba23d3fe25546c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: city tileset container
-  _sheetSize: {x: 0, y: 0}
-  texture: {fileID: 2800000, guid: 10767774cdfd55e46986617955970d12, type: 3}
-  sizeTextures: []
-  generateSprites: 0
-  _framesXY: {x: 10, y: 10}
-  _frameSize: {x: 16, y: 16}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
