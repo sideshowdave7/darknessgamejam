@@ -335,7 +335,7 @@ public class AIPath : MonoBehaviour {
 	}
 	
 	public virtual void AIPathCall ( GameObject[] navPoints ) {
-		
+
 		this.navPoints = navPoints;
 		
 		if (!canMove) { return; }
@@ -357,7 +357,32 @@ public class AIPath : MonoBehaviour {
 			transform.Translate (dir*Time.deltaTime, Space.World);
 		}
 	}
+	/*
+		public virtual void AIPathCall ( GameObject Player ){
+		
+		this.navPoints = null;
+		this.navPoints[0] = Player;
+		
+		if (!canMove) { return; }
+		
+		Vector3 dir = CalculateVelocity (GetFeetPosition());
+		
+		//Rotate towards targetDirection (filled in by CalculateVelocity)
+		if (targetDirection != Vector3.zero) {
+			RotateTowards (targetDirection);
+		}
 	
+		if (navController != null) {
+			navController.SimpleMove (GetFeetPosition(),dir);
+		} else if (controller != null) {
+			controller.SimpleMove (dir);
+		} else if (rigid != null) {
+			rigid.AddForce (dir);
+		} else {
+			transform.Translate (dir*Time.deltaTime, Space.World);
+		}
+	}
+	*/
 	/** Point to where the AI is heading.
 	  * Filled in by #CalculateVelocity */
 	protected Vector3 targetPoint;

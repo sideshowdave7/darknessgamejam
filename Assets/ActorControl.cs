@@ -7,14 +7,17 @@ public class ActorControl : MonoBehaviour {
 	public
 		Vector3 position, velocity;
 	public
-		float viewDistance = 0;
+		float viewDistance = 0, countDown;
 	public
-		int aware, health, speed, behavior, damage, countDown;	
+		int aware, health, speed, behavior, damage; 
+		
 	public
 		GameObject[] navPoints;
 	
+	protected
+		GameObject[] tempNavPoints;
 	protected 
-		int timeKeeper;
+		float timeKeeper;
 	protected
 		GameObject Actor, Player;
 		
@@ -40,15 +43,24 @@ public class ActorControl : MonoBehaviour {
 		}
 		else setAware( 0 );
 		
-		
-		
 		if( aware == 1 )
 			behavior = 1;
 	}
 
 	void move(){
-		gameObject.SendMessage ( "AIPathCall", navPoints , SendMessageOptions.DontRequireReceiver );
-		}
+		switch( behavior )
+		{
+		case 0:
+			
+			gameObject.SendMessage( "AIPathCall", navPoints , SendMessageOptions.DontRequireReceiver );
+				break;
+		case 1:
+			tempNavPoints = new GameObject[1];
+			tempNavPoints[0] = Player;
+			gameObject.SendMessage( "AIPathCall", tempNavPoints , SendMessageOptions.DontRequireReceiver );
+				break;
+		}	
+	}
 	
 	void attack(){
 		// get proximity to player
@@ -58,11 +70,15 @@ public class ActorControl : MonoBehaviour {
 
 	void  coolOff(){
 		if( aware == 0 && behavior == 1 ){
-			if(  timeKeeper * Time.deltaTime > countDown )
+			timeKeeper += Time.deltaTime;
+			if(timeKeeper > countDown )
 			{
 				behavior = 0;
+				timeKeeper = 0;
 			}
 		}
+		else
+			timeKeeper = 0;
 	}
 
 	int  getAware(){
