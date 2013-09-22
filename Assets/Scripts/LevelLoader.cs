@@ -63,7 +63,7 @@ public class LevelLoader : MonoBehaviour
 			float height = 0f;
 			switch (layer.name) {
 			case "Foreground":
-				height = 5f;
+				height = -5f;
 				break;
 			case "Background":
 				height = 0f;
@@ -93,6 +93,7 @@ public class LevelLoader : MonoBehaviour
 			go.transform.localPosition = new Vector3 (tile.x, height, 15 - tile.y);
 			if (ot != null) {
 				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
+				ot.depth = (int)height;
 				int id = ot.frameIndex;
 				ot.spriteContainer = container;
 				ot.frameIndex = id;
@@ -147,8 +148,10 @@ public class LevelLoader : MonoBehaviour
 			pos.x += size.x * 0.5f;
 			pos.z -= size.y * 0.5f;
 			go.transform.localPosition = pos;
-			if (ot != null)
+			if (ot != null) {
 				ot.position = new Vector2 (go.transform.localPosition.x, go.transform.localPosition.z);
+				ot.depth = -1;
+			}
 		}
 	}
 	
