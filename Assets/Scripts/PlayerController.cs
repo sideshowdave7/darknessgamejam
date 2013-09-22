@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour
 	public float move_speed;
 	public PlayerPowerEnum currentPower = PlayerPowerEnum.Normal;
 	private bool prevTogglePower;
+	public Flash flash;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		prevTogglePower = false;
 	}
+	
 	
 	// Update is called once per frame
 	void Update ()
@@ -20,9 +22,10 @@ public class PlayerController : MonoBehaviour
 		var togglePower = Input.GetButtonDown ("TogglePower");
 		
 		if (togglePower && !prevTogglePower) {
+			
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
-				DarknessAudioManager.Instance.muteLayers(.5f);
+				DarknessAudioManager.Instance.muteLayers(1f);
 				break;
 			case PlayerPowerEnum.Time:
 				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));
@@ -40,7 +43,7 @@ public class PlayerController : MonoBehaviour
 			currentPower = (PlayerPowerEnum)(((int)currentPower + 1) % (int)PlayerPowerEnum.End);
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
-				DarknessAudioManager.Instance.muteLayers(0f);
+				DarknessAudioManager.Instance.muteLayers(.1f);
 				break;
 			case PlayerPowerEnum.Time:
 				var times = GameObject.FindObjectsOfType(typeof(TimeToggleThingy));

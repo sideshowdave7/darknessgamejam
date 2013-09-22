@@ -12,9 +12,12 @@ public class DarknessAudioManager  : MonoBehaviour
 	private List<AudioSource> _deleted = null;
 	private static DarknessAudioManager _instance = null;
 	
+	private bool mutingLayers;
 	
 	public List<string> _allLayers;
 	public List<string> _muteLayers;
+	
+	public float sfxVolume=.5f;
 	
 	// Use this for initialization
 	void Start ()
@@ -36,6 +39,12 @@ public class DarknessAudioManager  : MonoBehaviour
 		
 		_muteLayers.Add ("Darkness-melody");
 		_muteLayers.Add ("Darkness-bass3");
+		_muteLayers.Add ("Darkness-bass2");
+		_muteLayers.Add ("Darkness-bass1");
+		
+		
+		
+		mutingLayers=false;
 
 		PlayOneShot ("Darkness-bass1","AudioManager",true);
 		PlayOneShot ("Darkness-bass2","AudioManager",true);
@@ -51,6 +60,15 @@ public class DarknessAudioManager  : MonoBehaviour
 	
 	public void muteLayers(float target)
 	{
+		
+		if (target == 0) {
+			mutingLayers = true;
+			sfxVolume=1.0f;
+		}
+		else {
+			mutingLayers = false;
+			sfxVolume = .5f;
+		}
 		
 		foreach (var clipname in _muteLayers)
 		{
@@ -146,12 +164,21 @@ public class DarknessAudioManager  : MonoBehaviour
 	
 	IEnumerator FadeMusicEnum(AudioSource _as,float target)
 	{
-	    while(_as.volume > .1F)
-	    {
-	        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime);
-	        yield return 0;
-	    }
-	    _as.volume = 0;
+		if (target < _as.volume){
+		
+		    while(_as.volume > target + .1f)
+		    {
+		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
+		        yield return 0;
+		    }
+		} else {
+			while(_as.volume < target - .1f)
+		    {
+		        _as.volume = Mathf.Lerp(_as.volume,target,Time.deltaTime*3);
+		        yield return 0;
+		    }
+		}
+	    _as.volume = target;
 	   
 	}
 	
