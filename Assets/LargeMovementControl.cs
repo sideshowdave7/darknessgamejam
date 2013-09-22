@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LargeMovementControl : MonoBehaviour {
 	
-	Vector3 dir;
+	public Vector3 dir;
 	public float speed = 1f;
 	public string alignment;
 	private bool change = false;
