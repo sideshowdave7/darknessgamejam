@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 				foreach (var enemy in enemies) {
 					enemy.GetComponent<AudioSource> ().pitch = .8f;	
 				}
+				currentPower = PlayerPowerEnum.Time;
 				break;
 			case PlayerPowerEnum.Time:
 				var times = GameObject.FindObjectsOfType (typeof(TimeToggleThingy));
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
 					enemy.GetComponent<SFXVolumeControl> ().sfxMultiplier = 1.2f;
 					enemy.GetComponent<AIPath> ().speed *= 3;
 				}
+				currentPower = PlayerPowerEnum.Visual;
 				break;
 			case PlayerPowerEnum.Visual:
 				var visuals = GameObject.FindObjectsOfType (typeof(VisibleToggleSpritesThingy));
@@ -49,10 +51,10 @@ public class PlayerController : MonoBehaviour
 					vis.SetVisibleMode (false);
 				}
 				StartCoroutine (FadeVisual (0f, 1f));
+				currentPower = PlayerPowerEnum.Time;
 				break;
 			}
-			currentPower = (PlayerPowerEnum)(((int)currentPower + 1) % (int)PlayerPowerEnum.End);
-
+			
 			//This state is now true (rising edge)
 			switch (currentPower) {
 			case PlayerPowerEnum.Audio:
