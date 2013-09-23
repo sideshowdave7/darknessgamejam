@@ -9,12 +9,15 @@ public class LevelLoader : MonoBehaviour
 	public TextAsset[] levels;
 	public string zoneFolder;
 	public GameObject lvl;
+	private float menuAlpha = 1f;
+	private float fadeStart = 0f;
 	
 	void Awake ()
 	{
 		if (levels != null && levels.Length > 0) {
 			ReloadLevel ();
 		}
+		fadeStart = Time.realtimeSinceStartup + 20f;
 	}
 	
 	void Update ()
@@ -22,6 +25,23 @@ public class LevelLoader : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.L)) {
 			GameObject.Destroy (lvl);
 			LoadNextLevel (Vector3.zero);
+		}
+	}
+	
+	void OnGUI ()
+	{
+		if (menuAlpha > 0f) {
+			GUI.backgroundColor = Color.black;
+			GUI.contentColor = new Color (1f, 1f, 1f, menuAlpha);
+			GUI.TextArea (new Rect (128f, 320f, 300f, 100f), 
+@"Welcome to Sensory Deprivation!
+Find the door to exit each level.
+Use the arrow keys to move.
+Press Space to toggle between dark (but slow) 
+and visible (but real-time)");
+			if (Time.realtimeSinceStartup > fadeStart) {
+				menuAlpha = 0f;
+			}
 		}
 	}
 	
@@ -40,6 +60,7 @@ public class LevelLoader : MonoBehaviour
 	
 	public GameObject LoadNextLevel (Vector3 pos)
 	{
+		menuAlpha = 0f;
 		return LoadLevel (++levelIndex, pos);
 	}
 	
