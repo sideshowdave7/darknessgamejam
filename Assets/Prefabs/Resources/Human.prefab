@@ -321,7 +321,7 @@ MonoBehaviour:
   _startAtRandomFrame: 0
   _destroyWhenFinished: 0
   animationPreview: 0
-  _animationName: mouse animation
+  _animationName: attacker animation
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

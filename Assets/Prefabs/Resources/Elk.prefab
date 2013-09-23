@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -5.58918428, y: 1.00105894, z: 0}
+  m_LocalPosition: {x: 3.91081572, y: 1.00861001, z: 9.00105858}
   m_LocalScale: {x: 1.89999998, y: 1.89999998, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Elk
-  _position: {x: -5.58918428, y: .5}
+  _position: {x: 3.91081572, y: 9.00105858}
   _size: {x: 1.89999998, y: 1.89999998}
   _rotation: 0
   _pivot: 4
@@ -258,7 +258,7 @@ MonoBehaviour:
     width: 0
     height: 0
   protoType: 
-  baseName: Elk
+  baseName: Elk-1
   oSize: {x: 2.13333344, y: 2.13333344}
   imageSize: {x: 0, y: 0}
   _offset: {x: 0, y: 0}
@@ -272,13 +272,13 @@ MonoBehaviour:
   _alpha: 1
   _image: {fileID: 0}
   sizeImages: []
-  _frameIndex: 0
-  _frameName: frame0
+  _frameIndex: 15
+  _frameName: frame15
   _spriteContainer: {fileID: 0}
   _containerName: 
   _newSprite: 0
   _animation: {fileID: 0}
-  _animationFrameset: down
+  _animationFrameset: left
   _speed: 1
   _looping: 1
   _numberOfPlays: -1
@@ -286,7 +286,7 @@ MonoBehaviour:
   _startAtRandomFrame: 0
   _destroyWhenFinished: 0
   animationPreview: 0
-  _animationName: mouse animation
+  _animationName: elk animation
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
